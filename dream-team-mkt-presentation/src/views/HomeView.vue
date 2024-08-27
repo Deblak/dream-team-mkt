@@ -1,9 +1,9 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <router-link to="/edit" class="btn btn-primary">go to edit page</router-link>
+    <h1>home page</h1>
   </main>
 </template>
