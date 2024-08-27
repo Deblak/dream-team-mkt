@@ -1,6 +1,15 @@
 <script setup>
 import {ref} from 'vue'
+// import { formService } from '../services/formService.js';
+import { axiosClient} from "../services/axiosClient.js"
 
+const inputFormDataIsValid = ref({
+  corporateName: true,
+  firstName: true,
+  lastName: true,
+  emailPhoneNumber: true,
+  message: true
+})
 const inputFormData = ref({
   corporateName: "",
   firstName: "",
@@ -11,9 +20,31 @@ const inputFormData = ref({
 })
 
 function inputisValid(inputs) {
-  let isValid = true
-  if (inputs.value.firstName === '' || inputs.value.lastName == '') {
-    isValid = false
+  let isValid = true;
+  inputFormDataIsValid.value.corporateName = true;
+  inputFormDataIsValid.value.firstName = true;
+  inputFormDataIsValid.value.lastName = true;
+  inputFormDataIsValid.value.emailPhoneNumber = true;
+  inputFormDataIsValid.value.message = true;
+  if (inputs.value.corporateName === '' || inputs.value.corporateName.trim().length > 200 ) {
+    inputFormDataIsValid.value.corporateName = false;
+    isValid = false;
+  }
+  if (inputs.value.firstName === '' || inputs.value.firstName.trim().length > 200 ) {
+    inputFormDataIsValid.value.firstName = false;
+    isValid = false;
+  }
+  if (inputs.value.lastName === '' || inputs.value.lastName.trim().length > 200 ) {
+    inputFormDataIsValid.value.lastName = false;
+    isValid = false;
+  }
+  if (inputs.value.email === '' && inputs.value.phoneNumber === '') {
+    inputFormDataIsValid.value.emailPhoneNumber = false;
+    isValid = false;
+  }
+  if (inputs.value.message === '' || inputs.value.message.trim().length > 2000) {
+    inputFormDataIsValid.value.message = false;
+    isValid = false;
   }
   return isValid;
 }
@@ -21,13 +52,19 @@ function inputisValid(inputs) {
 function submitData() {
   event.preventDefault()
   if (inputisValid(inputFormData)) {
-    // TODO
-  } else {
-    // TODO
+    // sendContactFormData(inputFormData)
+    const data = {
+      corporateName: inputFormData.value.firstName.trim(),
+      firstName: inputFormData.value.lastName.trim(),
+      lastName: inputFormData.value.lastName.trim(),
+      email: inputFormData.value.email.trim(),
+      phoneNumber: inputFormData.value.phoneNumber.trim(),
+      message: inputFormData.value.message.trim()
+    }
+    axiosClient.post('/endpointurl',
+      { data }
+      )
   }
-  inputisValid(inputFormData)
-  console.log(inputFormData.value.firstName);
-
 }
 </script>
 
@@ -40,20 +77,23 @@ function submitData() {
         <div class="m-3 row">
           <div class="field mx-4 col-10 col-lg-4">
             <label for="corporateName" class="form-label">Corporate names<span class="text-danger"><span class="text-danger">*</span></span></label>
-            <input v-model="inputFormData.corporateName" type="text" class="form-control" id="corporateName" placeholder="Example input placeholder">
+            <input v-model="inputFormData.corporateName" type="text" class="form-control" id="corporateName" placeholder="Example input placeholder" required>
+            <span v-if="!inputFormDataIsValid.corporateName" class="feedback text-danger">Corporate name can't be blank, 200 characters max !</span>
           </div>
         </div>
         <div class="row row-cols-lg-2 m-3">
           <div class="col-10 col-lg-4">
             <div class="field mx-4">
               <label for="firstName" class="form-label">First name<span class="text-danger">*</span></label>
-              <input v-model="inputFormData.firstName" type="text" class="form-control" id="firstName" placeholder="Another input placeholder">
+              <input v-model="inputFormData.firstName" type="text" class="form-control" id="firstName" placeholder="Another input placeholder" required>
+              <span v-if="!inputFormDataIsValid.firstName" class="feedback text-danger">First name can't be blank, 200 characters max !</span>
             </div>
           </div>
           <div class="col-10 col-lg-4">
             <div class="field mx-4">
               <label for="lastName" class="form-label">Last name<span class="text-danger">*</span></label>
-              <input v-model="inputFormData.lastName" type="text" class="form-control" id="lastName" placeholder="Another input placeholder">
+              <input v-model="inputFormData.lastName" type="text" class="form-control" id="lastName" placeholder="Another input placeholder" required>
+              <span v-if="!inputFormDataIsValid.lastName" class="feedback text-danger">Last name can't be blank, 200 characters max !</span>
           </div>
         </div>
       </div>
@@ -62,19 +102,22 @@ function submitData() {
           <div class="field mx-4 ">
             <label for="email" class="form-label">Email<span class="text-danger">*</span></label>
             <input v-model="inputFormData.email" type="email" class="form-control" id="email" placeholder="Another input placeholder">
+            <span v-if="!inputFormDataIsValid.emailPhoneNumber" class="feedback text-danger">Email or Phone number can't be blank !</span>
           </div>
         </div>
         <div class="col-10 col-lg-4">
           <div class="field mx-4">
             <label for="phoneNumber" class="form-label">Phone number<span class="text-danger">*</span></label>
             <input v-model="inputFormData.phoneNumber" type="tel" class="form-control" id="phoneNumber" placeholder="Another input placeholder">
+            <span v-if="!inputFormDataIsValid.emailPhoneNumber" class="feedback text-danger">Email or Phone number can't be blank !</span>
           </div>
         </div>
       </div>
       <div class="m-3 row">
         <div class="field mx-4 col-10">
           <label for="message" class="form-label">Message</label>
-          <textarea v-model="inputFormData.message" class="form-control" id="message" rows="3"></textarea>
+          <textarea v-model="inputFormData.message" class="form-control" id="message" rows="3" required></textarea>
+          <span v-if="!inputFormDataIsValid.message" class="feedback text-danger">Message can't be blank, 2000 characters max !</span>
         </div>
       </div>
       <div class="m-4 row">
