@@ -1,6 +1,6 @@
 <script setup>
-import { ref } from 'vue'
-import { axiosClient } from "../services/axiosClient.js"
+import { ref } from 'vue';
+import { ContactFormService } from "../services/contactFormService.js"
 
 const inputFormDataIsValid = ref({
   corporateName: true,
@@ -51,17 +51,7 @@ function inputIsValid(inputs) {
 function submitData() {
   event.preventDefault()
   if (inputIsValid(inputFormData)) {
-    const data = {
-      corporateName: inputFormData.value.firstName.trim(),
-      firstName: inputFormData.value.lastName.trim(),
-      lastName: inputFormData.value.lastName.trim(),
-      email: inputFormData.value.email.trim(),
-      phoneNumber: inputFormData.value.phoneNumber.trim(),
-      message: inputFormData.value.message.trim()
-    }
-    axiosClient.post('/endPointUrl',
-      { data }
-      )
+    ContactFormService.sendContactFormData(inputFormData);
   }
 }
 </script>
