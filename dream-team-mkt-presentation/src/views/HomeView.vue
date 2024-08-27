@@ -1,9 +1,12 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import IdentityProduct from '@/components/IdentityProduct.vue';
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <router-link to="/edit" class="btn btn-primary">go to edit page</router-link>
+    <h1>home page</h1>
+    <IdentityProduct/>
+
   </main>
 </template>
