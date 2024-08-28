@@ -62,14 +62,14 @@ spring.datasource.password=YOUR PASSWORD
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
 
-co.simplon.dream-team.email.from=SECRET EMAIL
+co.simplon.dream-team.email.from=SECRET-EMAIL
 
 # SMTP/Mail properties:
 spring.mail.protocol=smtp
-spring.mail.host=SECRET HOST
-spring.mail.port=SECRT PORT
-spring.mail.username=SECRET EMAIL
-spring.mail.password=SECRET PASSWORD
+spring.mail.host=SECRET-HOST
+spring.mail.port=SECRET-PORT
+spring.mail.username=SECRET-EMAIL
+spring.mail.password=SECRET-PASSWORD
 spring.mail.properties.mail.smtp.ssl.enable=true
 ```
 please contact us to get SECRETS !
