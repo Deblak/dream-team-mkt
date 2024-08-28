@@ -1,6 +1,5 @@
 <script setup></script>
 <template>
-    <h2>Pricings</h2>
     <section class="container ">
         <div class="row row-cols-lg-3 bg-info-subtle">
 
