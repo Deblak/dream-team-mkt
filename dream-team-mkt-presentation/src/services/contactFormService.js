@@ -18,4 +18,4 @@ class ContactFormService {
   }
 }
 
-export {ContactFormService};
+export default ContactFormService;

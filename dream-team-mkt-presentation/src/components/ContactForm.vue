@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import { ContactFormService } from "../services/contactFormService.js"
+import ContactFormService from "../services/contactFormService.js"
 
 const inputFormDataIsValid = ref({
   corporateName: true,
