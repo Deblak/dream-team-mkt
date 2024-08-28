@@ -52,6 +52,14 @@ function submitData() {
   event.preventDefault()
   if (inputIsValid(inputFormData)) {
     ContactFormService.sendContactFormData(inputFormData);
+    inputFormData.value = {
+      corporateName: "",
+      firstName: "",
+      lastName: "",
+      email: "",
+      phoneNumber: "",
+      message: ""
+    }
   }
 }
 </script>

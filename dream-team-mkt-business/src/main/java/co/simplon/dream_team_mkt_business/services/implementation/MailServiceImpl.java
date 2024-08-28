@@ -24,14 +24,18 @@ public class MailServiceImpl implements MailService {
 
 	@Override
 	public void sendContactMail(ContactForm inputs) {
+		String mailBody = "Companie name: " + inputs.corporateName() + System.lineSeparator() + "Contact Name: " + inputs.firstName() + " " + inputs.lastName()
+				+ System.lineSeparator() + "Email: " + inputs.email() + " " + "Phone number: " + inputs.phoneNumber() + System.lineSeparator() + "Message: "
+				+ inputs.message();
+		String subject = "Message from dream team contact form by " + inputs.firstName() + " " + inputs.lastName();
 		try {
 			MimeMessage message = sender.createMimeMessage();
 			MimeMessageHelper helper = new MimeMessageHelper(message);
 			helper.setFrom(emailFrom);
 			helper.setReplyTo(emailFrom);
 			helper.setTo(inputs.email());
-			helper.setSubject("test subject from spring");
-			helper.setText("Message: " + inputs.message());
+			helper.setSubject(subject);
+			helper.setText(mailBody);
 			sender.send(message);
 		} catch (MessagingException e) {
 			System.err.println(e);
