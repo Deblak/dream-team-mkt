@@ -1,11 +1,10 @@
 <script setup>
-
+import Panel from "@/components/panel/panel.vue"
 </script>
-
 <template>
   <main>
-    <router-link to="/" class="btn btn-primary">Back Home</router-link>
     <h1>Edit page</h1>
     <p>Hello François !</p>
   </main>
+  <Panel/>
 </template>

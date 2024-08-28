@@ -1,0 +1,12 @@
+<script setup> </script>
+<template>
+    <p>Dream Team</p>
+    <header>
+        <ul class="dropdown-menu">
+            <li><h6 class="dropdown-header">Dropdown header</h6></li>
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+        </ul>
+    </header>
+</template>
+ 
