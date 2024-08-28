@@ -12,7 +12,7 @@ import { RouterView } from 'vue-router'
         <div>
           <router-link to="/edit" class="btn btn-primary">Edit page</router-link>
         </div>
-        
+
         <div>
           <p class="collapse navbar-collapse navbar-brand text-white" id="navbarNav">DreamTeam</p>
         </div>
