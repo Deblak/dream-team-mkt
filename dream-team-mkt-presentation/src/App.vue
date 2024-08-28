@@ -11,9 +11,6 @@ import { RouterView } from 'vue-router'
     <div class="nav-item d-flex justify-content-between">
           <router-link to="/edit" class="btn btn-primary">Edit page</router-link>
         </div>
-        <div class="nav-item">
-          <router-link to="/" class="btn btn-primary">Home</router-link>
-        </div>
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
