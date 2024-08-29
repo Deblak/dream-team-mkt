@@ -1,8 +1,8 @@
 <script setup>
 import HeaderComponant from '@/components/HeaderComponent.vue';
+import PanelComponent from '../components/panel/PanelComponent.vue'
 import FooterComponenet from'@/components/FooterComponent.vue';
 import ContactForm from '../components/ContactForm.vue';
-import Panel from "@/components/panel/panel.vue";
 import IdentityProduct from '@/components/IdentityProduct.vue';
 import PricingsProduct from '@/components/PricingsProduct.vue';
 </script>
@@ -13,7 +13,7 @@ import PricingsProduct from '@/components/PricingsProduct.vue';
     <HeaderComponant/>
     <h1>home page</h1>
     <IdentityProduct/>
-    <Panel/>
+    <PanelComponent/>
     <PricingsProduct/>
     <ContactForm />
     <FooterComponenet/>

@@ -16,7 +16,7 @@ CREATE TABLE t_offers(
 
 CREATE TABLE t_dream_team_identity(
 	id_identity bigint GENERATED ALWAYS AS IDENTITY,
-	picture VARCHAR(200) NOT null,
+	picture VARCHAR(1000) NOT null,
 	slogan_fr VARCHAR(200) NOT NULL,
 	slogan_en VARCHAR(200) NOT null,
 	panel_1_desc_fr VARCHAR(1000) NOT null,

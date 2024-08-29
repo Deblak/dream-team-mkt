@@ -1,6 +1,6 @@
 <script setup>
+import PanelComponent from '../components/panel/PanelComponent.vue'
 import HeaderComponet from '@/components/HeaderComponent.vue';
-import Panel from "@/components/panel/panel.vue";
 import IdentityProduct from '@/components/IdentityProduct.vue';
 import PricingsProduct from '@/components/PricingsProduct.vue';
 
@@ -11,7 +11,7 @@ import PricingsProduct from '@/components/PricingsProduct.vue';
     <HeaderComponet/>
     <h1>Edit page</h1>
     <IdentityProduct/>
-    <Panel/>
+    <PanelComponent/>
     <PricingsProduct/>
   </main>
 </template>

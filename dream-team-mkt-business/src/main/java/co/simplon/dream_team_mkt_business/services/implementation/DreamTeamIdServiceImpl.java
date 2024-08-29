@@ -9,7 +9,7 @@ import co.simplon.dream_team_mkt_business.services.DreamTeamIdService;
 
 @Service
 public class DreamTeamIdServiceImpl implements DreamTeamIdService {
-    private final DreamTeamIdRepository repository;
+	private final DreamTeamIdRepository repository;
 
     public DreamTeamIdServiceImpl(DreamTeamIdRepository repository) {
 	this.repository = repository;
@@ -19,5 +19,6 @@ public class DreamTeamIdServiceImpl implements DreamTeamIdService {
     public DreamTeamIdDto getAll() {
 	return DreamTeamIdMapper.entityToDto(repository.findAll().getLast());
     }
+
 
 }
