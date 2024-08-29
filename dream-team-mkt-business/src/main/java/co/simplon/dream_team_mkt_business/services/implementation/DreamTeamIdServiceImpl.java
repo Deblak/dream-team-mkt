@@ -10,16 +10,16 @@ import co.simplon.dream_team_mkt_business.services.DreamTeamIdService;
 
 @Service
 public class DreamTeamIdServiceImpl implements DreamTeamIdService {
-    private final DreamTeamIdRepository repository;
+	private final DreamTeamIdRepository repository;
 
-    public DreamTeamIdServiceImpl(DreamTeamIdRepository repository) {
-	super();
-	this.repository = repository;
-    }
+	public DreamTeamIdServiceImpl(DreamTeamIdRepository repository) {
+		super();
+		this.repository = repository;
+	}
 
-    @Override
-    public List<DreamTeamId> getAll() {
-	return repository.findAll();
-    }
+	@Override
+	public List<DreamTeamId> getAll() {
+		return repository.findAll();
+	}
 
 }
