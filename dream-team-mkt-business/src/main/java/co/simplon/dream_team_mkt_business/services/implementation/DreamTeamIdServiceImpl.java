@@ -11,14 +11,18 @@ import co.simplon.dream_team_mkt_business.services.DreamTeamIdService;
 public class DreamTeamIdServiceImpl implements DreamTeamIdService {
 	private final DreamTeamIdRepository repository;
 
-    public DreamTeamIdServiceImpl(DreamTeamIdRepository repository) {
-	this.repository = repository;
-    }
+	public DreamTeamIdServiceImpl(DreamTeamIdRepository repository) {
+		this.repository = repository;
+	}
 
-    @Override
-    public DreamTeamIdDto getAll() {
-	return DreamTeamIdMapper.entityToDto(repository.findAll().getLast());
-    }
+	@Override
+	public DreamTeamIdDto getAll() {
+		return DreamTeamIdMapper.entityToDto(repository.findAll().getLast());
+	}
 
+	@Override
+	public DreamTeamIdDto updateData(DreamTeamIdDto dreamTeamIdDto) {
+		return DreamTeamIdMapper.entityToDto(repository.saveAndFlush(DreamTeamIdMapper.updateEntityWithInputs(dreamTeamIdDto, repository.findAll().getLast())));
+	}
 
 }

@@ -7,8 +7,15 @@ class PanelComponentService {
     await axiosClient.get("/dreamteam").then( function(response) {
       data = response.data;
     })
-    console.log(data);
     return data;
+  }
+
+  static async updateData(data) {
+    let returnData = {}
+    returnData = await axiosClient.post("/dreamteam/updateData",
+      {data}
+    )
+    return returnData.data;
   }
 
 }

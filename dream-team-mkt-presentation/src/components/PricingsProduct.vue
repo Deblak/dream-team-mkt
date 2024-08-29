@@ -1,6 +1,6 @@
 <script setup>
 import { ref ,onMounted } from 'vue';
-import PricingProductService from '../services/pricingProductService.js'
+import PricingProductService from '../services/pricingProductService.js';
 
 const datas = ref([]);
 
@@ -20,6 +20,5 @@ onMounted( async () => {
             </ul>
         </div>
     </div>
-
     </section>
 </template>

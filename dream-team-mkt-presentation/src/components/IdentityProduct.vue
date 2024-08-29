@@ -4,19 +4,16 @@ import { ref, onMounted } from 'vue';
 
 const dreamTeamId = ref({});
 
-onMounted(() => {
-    console.log("Hello");
-    axiosClient.get('/dreamteam')
+onMounted( async () => {
+  await  axiosClient.get('/dreamteam')
     .then(response => {
         dreamTeamId.value = response.data;
-        console.log(dreamTeamId);
     });
-
 })
 
 </script>
 <template>
- 
+
     <section>
         <div class="d-flex flex-wrap flex-lg-nowrap g-3 align-items-center justify-content-center">
             <div class="col-lg-8 order-1 order-lg-0" >

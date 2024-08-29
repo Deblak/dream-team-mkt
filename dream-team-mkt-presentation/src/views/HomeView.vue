@@ -13,7 +13,7 @@ import PricingsProduct from '@/components/PricingsProduct.vue';
     <HeaderComponant/>
     <h1>home page</h1>
     <IdentityProduct/>
-    <PanelComponent/>
+    <PanelComponent :isEditable=false />
     <PricingsProduct/>
     <ContactForm />
     <FooterComponenet/>
