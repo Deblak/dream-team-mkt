@@ -13,14 +13,13 @@ class PricingProductService {
         nameOfferEn: data.nameOfferEn,
         nameOfferFr: data.nameOfferFr,
         priceOfferFr: data.priceOfferFr,
-        priceOfferEn: data.priceOfferen,
+        priceOfferEn: data.priceOfferEn,
         planOfferFr: data.planOfferFr.split(","),
         planOfferEn: data.planOfferEn.split(","),
         callToActionFr: data.callToActionFr,
         callToActionEn: data.callToActionEn
       }
     })
-    // console.log(datas);
     return datas;
   }
 
