@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import co.simplon.dream_team_mkt_business.dtos.OfferDto;
 import co.simplon.dream_team_mkt_business.entities.Offer;
+import co.simplon.dream_team_mkt_business.mapper.OfferMapper;
 import co.simplon.dream_team_mkt_business.repositories.OfferRepository;
 import co.simplon.dream_team_mkt_business.services.OfferService;
 
@@ -18,8 +20,8 @@ public class OfferServiceImpl implements OfferService {
     }
 
     @Override
-    public List<Offer> getAll() {
-	return repository.findAll();
+    public List<OfferDto> getAll() {
+	List<Offer> offers = repository.findAll();
+	return OfferMapper.offersToOfferDtos(offers);
     }
-
 }

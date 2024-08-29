@@ -2,9 +2,9 @@ package co.simplon.dream_team_mkt_business.services;
 
 import java.util.List;
 
-import co.simplon.dream_team_mkt_business.entities.Offer;
+import co.simplon.dream_team_mkt_business.dtos.OfferDto;
 
 public interface OfferService {
-    List<Offer> getAll();
+    List<OfferDto> getAll();
 
 }

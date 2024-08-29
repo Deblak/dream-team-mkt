@@ -1,6 +1,7 @@
 <script setup>
-import ContactForm from '../components/ContactForm.vue'
-import PanelComponent from '../components/panel/PanelComponent.vue'
+import HeaderComponant from '@/components/HeaderComponent.vue';
+import FooterComponenet from'@/components/FooterComponent.vue';
+import ContactForm from '../components/ContactForm.vue';
 import IdentityProduct from '@/components/IdentityProduct.vue';
 import PricingsProduct from '@/components/PricingsProduct.vue';
 </script>
@@ -8,10 +9,12 @@ import PricingsProduct from '@/components/PricingsProduct.vue';
 
 <template>
   <main>
+    <HeaderComponant/>
     <h1>home page</h1>
     <IdentityProduct/>
     <PanelComponent/>
     <PricingsProduct/>
     <ContactForm />
+    <FooterComponenet/>
   </main>
 </template>

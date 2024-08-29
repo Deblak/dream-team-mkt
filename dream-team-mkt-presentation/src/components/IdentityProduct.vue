@@ -1,4 +1,20 @@
-<script setup></script>
+<script setup>
+import axiosClient from '@/services/axiosClient';
+import { ref, onMounted } from 'vue';
+
+const dreamTeamId = ref({});
+
+onMounted(() => {
+    console.log("Hello");
+    axiosClient.get('/dreamteam')
+    .then(response => {
+        dreamTeamId.value = response.data;
+        console.log(dreamTeamId);
+    });
+
+})
+
+</script>
 <template>
  
     <section>
@@ -7,7 +23,7 @@
                 <img src="../../cesar-couto-27HiryxnHJk-unsplash.jpg" alt="example identity picture" class="col-lg-12 img-fluid" style="height: 50vh;">
             </div>
             <div class="mx-lg-auto text-center p-2 h4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor !
+                {{ dreamTeamId.sloganFr }}
             </div>
         </div>
     </section>
