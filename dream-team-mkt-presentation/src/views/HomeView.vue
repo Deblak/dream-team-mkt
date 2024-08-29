@@ -1,5 +1,6 @@
 <script setup>
 import HeaderComponant from '@/components/HeaderComponent.vue';
+import PanelComponent from '../components/panel/PanelComponent.vue'
 import FooterComponenet from'@/components/FooterComponent.vue';
 import ContactForm from '../components/ContactForm.vue';
 import IdentityProduct from '@/components/IdentityProduct.vue';
