@@ -19,7 +19,7 @@ const updateValue = ref('');
 
 /**Tap text and display value */
 function onInput(e) {
-    dreamTeamId.value.sloganFr = e.target.value
+    dreamTeamId.value.sloganEn = e.target.value
 }
 
 const inputDataIsValid = ref({
