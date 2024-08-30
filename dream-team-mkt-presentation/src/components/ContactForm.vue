@@ -65,17 +65,17 @@ function submitData() {
 </script>
 
 <template>
-  <div class="container bg-light border rounded-2">
-    <form novalidate class="p4 d-flex">
-      <div class="contact-form-container col-12 py-3 ">
-        <h1 class="text-center m-3">Contact form</h1>
+  <div class="container  border rounded-2 col-12">
+    <h1 class="text-center m-3">Contact form</h1>
+    <form novalidate class="d-flex flex-column mx-3 bg-light">
+      <div class="contact-form-container col-12">
         <div class="m-3 row">
           <div class="field mx-3 col-10 col-lg-4">
             <label for="corporateName" class="form-label fs-5">Corporate names<span class="text-danger"><span
                   class="text-danger">*</span></span></label>
             <input v-model="inputFormData.corporateName" type="text" class="form-control"
               v-bind:class="{ borderIsRed: !inputFormDataIsValid.corporateName }" id="corporateName"
-              placeholder="Example input placeholder" required>
+              placeholder="max 200 characters" required>
             <span v-if="!inputFormDataIsValid.corporateName" class="feedback fst-italic text-danger">Corporate name
               can't be blank, max 200 characters !</span>
           </div>
@@ -86,7 +86,7 @@ function submitData() {
               <label for="firstName" class="form-label fs-5">First name<span class="text-danger">*</span></label>
               <input v-model="inputFormData.firstName" type="text" class="form-control"
                 v-bind:class="{ borderIsRed: !inputFormDataIsValid.firstName }" id="firstName"
-                placeholder="Another input placeholder" required>
+                placeholder="max 200 characters" required>
               <span v-if="!inputFormDataIsValid.firstName" class="feedback fst-italic text-danger">First name can't be
                 blank, max 200 characters !</span>
             </div>
@@ -96,7 +96,7 @@ function submitData() {
               <label for="lastName" class="form-label fs-5">Last name<span class="text-danger">*</span></label>
               <input v-model="inputFormData.lastName" type="text" class="form-control"
                 v-bind:class="{ borderIsRed: !inputFormDataIsValid.lastName }" id="lastName"
-                placeholder="Another input placeholder" required>
+                placeholder="max 200 characters" required>
               <span v-if="!inputFormDataIsValid.lastName" class="feedback fst-italic text-danger">Last name can't be
                 blank, max 200 characters !</span>
             </div>
@@ -108,9 +108,8 @@ function submitData() {
               <label for="email" class="form-label fs-5">Email<span class="text-danger">*</span></label>
               <input v-model="inputFormData.email" type="email" class="form-control"
                 v-bind:class="{ borderIsRed: !inputFormDataIsValid.emailPhoneNumber }" id="email"
-                placeholder="Another input placeholder">
-              <span v-if="!inputFormDataIsValid.emailPhoneNumber" class="feedback fst-italic text-danger">Email or Phone
-                number can't be blank !</span>
+                placeholder="email or Phone number can't be blank">
+              <span v-if="!inputFormDataIsValid.emailPhoneNumber" class="feedback fst-italic text-danger">Email or Phone number can't be blank !</span>
             </div>
           </div>
           <div class="col-10 col-lg-4">
@@ -118,7 +117,7 @@ function submitData() {
               <label for="phoneNumber" class="form-label fs-5">Phone number<span class="text-danger">*</span></label>
               <input v-model="inputFormData.phoneNumber" type="tel" class="form-control"
                 v-bind:class="{ borderIsRed: !inputFormDataIsValid.emailPhoneNumber }" id="phoneNumber"
-                placeholder="Another input placeholder">
+                placeholder="email or Phone number can't be blank">
               <span v-if="!inputFormDataIsValid.emailPhoneNumber" class="feedback fst-italic text-danger">Email or Phone
                 number can't be blank !</span>
             </div>
@@ -128,13 +127,12 @@ function submitData() {
           <div class="field mx-3 col-10">
             <label for="message" class="form-label fs-5">Message<span class="text-danger">*</span></label>
             <textarea v-model="inputFormData.message" class="form-control" id="message"
-              v-bind:class="{ borderIsRed: !inputFormDataIsValid.message }" rows="3" required></textarea>
-            <span v-if="!inputFormDataIsValid.message" class="feedback fst-italic text-danger">Message can't be blank,
-              max 2000 characters !</span>
+              v-bind:class="{ borderIsRed: !inputFormDataIsValid.message }" rows="3" required placeholder="max 2000 characters"></textarea>
+            <span v-if="!inputFormDataIsValid.message" class="feedback fst-italic text-danger">Max 2000 characters or can't be blank !</span>
           </div>
         </div>
-        <div class="m-4 row">
-          <button v-on:click="submitData" class="btn btn-primary mt-4 ">SEND
+        <div class="m-4 row justify-content-center">
+          <button v-on:click="submitData" class="btn btn-primary mt-4 col-12 col-lg-auto">SEND
           </button>
         </div>
       </div>
