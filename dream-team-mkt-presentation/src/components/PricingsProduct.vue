@@ -37,7 +37,7 @@ function splitPlanOffer(params) {
       <i class="h4 text-white bi bi-pencil-square"></i>
     </button>
     <div class="container ">
-      
+
         <label v-if="props.isEditable && isInEdition">English</label>
         <div class="row row-cols-lg-3 bg-info-subtle">
           <div v-for="data in datas" :key="data.nameOfferEn" class="p-2 text-center">
@@ -51,7 +51,7 @@ function splitPlanOffer(params) {
       <label v-if="props.isEditable && isInEdition">English</label>
       <div v-if="isInEdition" class="row row-cols-lg-3 bg-info-subtle">
         <div v-for="data in datas" :key="data.nameOfferEn" class="p-2 text-center">
-          <input class="h3" v-model="data.nameOfferEn" type="text" />
+          <input class="h3" v-model.lazy="data.nameOfferEn" type="text" />
           <input class="h3" v-model="data.priceOfferEn" type="text" />
           <textarea type="text" v-model="data.planOfferEn"></textarea>
         </div>
@@ -59,7 +59,7 @@ function splitPlanOffer(params) {
       <label v-if="props.isEditable && isInEdition">Français</label>
       <div v-if="isInEdition" class="row row-cols-lg-3 bg-info-subtle">
           <div v-for="data in datas" :key="data.nameOfferFr" class="p-2 text-center">
-            <input class="h3" v-model="data.nameOfferFr" type="text" />
+            <input class="h3" v-model.lazy="data.nameOfferFr" type="text" />
             <input class="h3" v-model="data.priceOfferFr" type="text" />
             <textarea type="text" v-model="data.planOfferFr" ></textarea>
         </div>
