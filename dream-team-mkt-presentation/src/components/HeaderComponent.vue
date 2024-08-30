@@ -2,9 +2,9 @@
 
 <template>
   <header>
-    <nav class="fixed-top navbar navbar-expand-lg bg-body-tertiary d-flex justify-content-between">
+    <nav class="fixed-top navbar navbar-expand-lg bg-body-tertiary d-flex justify-content-center">
       <div class="container-fluid text-bg-primary"> 
-        <div class="collapse navbar-collapse d-flex justify-content-center">
+        <div class="collapse navbar-collapse d-flex justify-content-center col-11">
           <router-link to="/" class="navbar-brand text-white">DreamTeam</router-link>
         </div>
 
@@ -12,7 +12,7 @@
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <router-link  to="/edit" href="#" class="btn btn-primary dropdown-item">Edit page</router-link>
+        <router-link  to="/edit" href="#" class="btn btn-primary dropdown-item d-flex justify-content-end">Edit page</router-link>
 
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-auto">
 
