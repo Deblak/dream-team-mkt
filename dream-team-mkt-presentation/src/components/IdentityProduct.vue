@@ -15,7 +15,6 @@ const editIdProduct = () => {
     console.log("I believe I can click !");
     editDreamTeam.value = !editDreamTeam.value;
 }
-const updateValue = ref('');
 
 /**Tap text and display value */
 function onInput(e) {
@@ -29,6 +28,7 @@ const inputDataIsValid = ref({
 
 function submitData() {
     axiosClient.post('/dreamteam/updateData', dreamTeamId.value);
+    editDreamTeam.value = false;
 }
 
 onMounted(() => {
@@ -67,7 +67,7 @@ onMounted(() => {
                 @submit="">
 
                 <div class="col-12 col-lg-4 d-flex">
-                    <input type="text" v-model="updateValue" class="form-control mt-2" placeholder="Upload a new image"
+                    <input type="text" v-model="dreamTeamId.picture" class="form-control mt-2" placeholder="Upload a new image"
                         :v-bind:class="{ borderIsRed: !inputDataIsValid.picture }" required>
 
                     <i class="h3 m-2 bi bi-filetype-jpg"></i>
