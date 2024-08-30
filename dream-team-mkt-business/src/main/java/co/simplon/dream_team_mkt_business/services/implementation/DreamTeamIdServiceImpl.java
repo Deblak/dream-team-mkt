@@ -16,7 +16,7 @@ public class DreamTeamIdServiceImpl implements DreamTeamIdService {
 	}
 
 	@Override
-	public DreamTeamIdDto getAll() {
+	public DreamTeamIdDto get() {
 		return DreamTeamIdMapper.entityToDto(repository.findAll().getLast());
 	}
 

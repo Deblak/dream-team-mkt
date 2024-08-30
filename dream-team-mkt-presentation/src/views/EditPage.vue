@@ -1,5 +1,5 @@
 <script setup>
-import PanelComponent from '../components/panel/PanelComponent.vue'
+import PanelComponent from '../components/PanelComponent.vue'
 import HeaderComponet from '@/components/HeaderComponent.vue';
 import IdentityProduct from '@/components/IdentityProduct.vue';
 import PricingsProduct from '@/components/PricingsProduct.vue';
@@ -17,3 +17,4 @@ import PricingsProduct from '@/components/PricingsProduct.vue';
   </main>
 </template>
 
+../components/PanelComponent.vue
