@@ -21,12 +21,27 @@ public class OfferServiceImpl implements OfferService {
 
 	@Override
 	public List<OfferDto> getAll() {
-		List<Offer> offers = repository.findAll();
+		List<Offer> offers = repository.findAll().stream()
+				.sorted((o1, o2) -> Long.valueOf(o1.getIdOffer()).intValue() - Long.valueOf(o2.getIdOffer()).intValue()).toList();
 		return OfferMapper.offersToOfferDtos(offers);
 	}
 
 	@Override
 	public void updateData(List<OfferDto> inputs) {
-//		List<Offer> offers = repository.findAll().stream().map( o ->  o.setCallToActionEn("tuytty")).toList();
+		List<Offer> offers = repository.findAll().stream().map(o -> {
+			Offer offer = new Offer();
+			OfferDto offerDto = inputs.stream().filter(i -> i.nameOfferEn().equals(o.getNameOfferEn())).toList().getFirst();
+			offer.setIdOffer(o.getIdOffer());
+			offer.setCallToActionEn(offerDto.callToActionEn());
+			offer.setCallToActionFr(offerDto.callToActionFr());
+			offer.setNameOfferEn(offerDto.nameOfferEn());
+			offer.setNameOfferFr(offerDto.nameOfferFr());
+			offer.setPlanOfferEn(offerDto.planOfferEn());
+			offer.setPlanOfferFr(offerDto.planOfferFr());
+			offer.setPriceOfferEn(offerDto.priceOfferEn());
+			offer.setPriceOfferFr(offerDto.priceOfferFr());
+			return offer;
+		}).toList();
+		List<Offer> updateOffers = repository.saveAll(offers);
 	}
 }

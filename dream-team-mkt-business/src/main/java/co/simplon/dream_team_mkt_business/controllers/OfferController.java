@@ -1,6 +1,5 @@
 package co.simplon.dream_team_mkt_business.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
@@ -33,8 +32,7 @@ public class OfferController {
 
 	@PostMapping("/update")
 	@ResponseStatus(code = HttpStatus.OK)
-	public List<OfferDto> update(@RequestBody List<OfferDto> inputs) {
+	public void update(@RequestBody List<OfferDto> inputs) {
 		service.updateData(inputs);
-		return new ArrayList<OfferDto>();
 	}
 }
