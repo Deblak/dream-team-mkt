@@ -28,20 +28,19 @@ public class OfferServiceImpl implements OfferService {
 
 	@Override
 	public void updateData(List<OfferDto> inputs) {
-		List<Offer> offers = repository.findAll().stream().map(o -> {
+		repository.deleteAll();
+		List<Offer> offers = inputs.stream().map(o -> {
 			Offer offer = new Offer();
-			OfferDto offerDto = inputs.stream().filter(i -> i.nameOfferEn().equals(o.getNameOfferEn())).toList().getFirst();
-			offer.setIdOffer(o.getIdOffer());
-			offer.setCallToActionEn(offerDto.callToActionEn());
-			offer.setCallToActionFr(offerDto.callToActionFr());
-			offer.setNameOfferEn(offerDto.nameOfferEn());
-			offer.setNameOfferFr(offerDto.nameOfferFr());
-			offer.setPlanOfferEn(offerDto.planOfferEn());
-			offer.setPlanOfferFr(offerDto.planOfferFr());
-			offer.setPriceOfferEn(offerDto.priceOfferEn());
-			offer.setPriceOfferFr(offerDto.priceOfferFr());
+			offer.setCallToActionEn(o.callToActionEn());
+			offer.setCallToActionFr(o.callToActionFr());
+			offer.setNameOfferEn(o.nameOfferEn());
+			offer.setNameOfferFr(o.nameOfferFr());
+			offer.setPlanOfferEn(o.planOfferEn());
+			offer.setPlanOfferFr(o.planOfferFr());
+			offer.setPriceOfferEn(o.priceOfferEn());
+			offer.setPriceOfferFr(o.priceOfferFr());
 			return offer;
 		}).toList();
-		List<Offer> updateOffers = repository.saveAll(offers);
+		repository.saveAll(offers);
 	}
 }
