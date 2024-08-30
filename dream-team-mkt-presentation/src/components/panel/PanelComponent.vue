@@ -26,6 +26,7 @@ async function saveChange() {
 
 
 <template>
+
   <section class="text-end">
     <button v-if="props.isEditable" class="me-5 btn btn-info mt-3" @click="toggleEdition">
       <i class="h4 text-white bi bi-pencil-square"></i>
@@ -64,8 +65,9 @@ async function saveChange() {
           <textarea v-model="data.panelTwoDescFr" id="panel-two-fr" class="form-control"></textarea>
         </div>
       </div>
-
-      <div v-if="props.isEditable && isInEdition" @click="saveChange" class="btn btn-primary mb-3">SAVE</div>
+      <div class="text-end">
+        <div v-if="props.isEditable && isInEdition" @click="saveChange" class="btn btn-primary mb-3">SAVE</div>
+      </div>
     </div>
 
   </section>
