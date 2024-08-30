@@ -26,12 +26,11 @@ async function saveChange() {
 
 
 <template>
-  <section>
-    <div class="text-end">
-      <button v-if="props.isEditable" class="me-5 btn btn-info mt-3" @click="toggleEdition">
-        <i class="h4 text-white bi bi-pencil-square"></i>
-      </button>
-    </div>
+
+  <section class="text-end">
+    <button v-if="props.isEditable" class="me-5 btn btn-info mt-3" @click="toggleEdition">
+      <i class="h4 text-white bi bi-pencil-square"></i>
+    </button>
     <div class="container">
       <div class="row row-cols-lg-2 my-4">
         <div class="mb-3">
