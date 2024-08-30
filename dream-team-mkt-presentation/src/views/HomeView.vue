@@ -1,6 +1,6 @@
 <script setup>
 import HeaderComponant from '@/components/HeaderComponent.vue';
-import PanelComponent from '../components/panel/PanelComponent.vue'
+import PanelComponent from '../components/PanelComponent.vue'
 import FooterComponenet from'@/components/FooterComponent.vue';
 import ContactForm from '../components/ContactForm.vue';
 import IdentityProduct from '@/components/IdentityProduct.vue';
@@ -19,3 +19,4 @@ import PricingsProduct from '@/components/PricingsProduct.vue';
     <FooterComponenet/>
   </main>
 </template>
+../components/PanelComponent.vue
