@@ -14,7 +14,8 @@ onMounted( async () => {
 })
 
 function toggleEdition() {
-  isInEdition.value = true;
+  //isInEdition.value = true;
+  isInEdition.value = !isInEdition.value;
 }
 
 async function saveChange() {
@@ -30,7 +31,13 @@ function splitPlanOffer(params) {
 </script>
 
 <template>
-    <section class="container ">
+    <section class="text-end">
+
+  <button v-if="props.isEditable" class="me-5 btn btn-info mt-3" @click="toggleEdition">
+      <i class="h4 text-white bi bi-pencil-square"></i>
+    </button>
+    <div class="container ">
+      
         <label v-if="props.isEditable && isInEdition">English</label>
         <div class="row row-cols-lg-3 bg-info-subtle">
           <div v-for="data in datas" :key="data.nameOfferEn" class="p-2 text-center">
@@ -57,7 +64,7 @@ function splitPlanOffer(params) {
             <textarea type="text" v-model="data.planOfferFr" ></textarea>
         </div>
       </div>
-      <div v-if="props.isEditable && !isInEdition" @click="toggleEdition" class="btn btn-primary">edit prices</div>
       <div v-if="props.isEditable && isInEdition" @click="saveChange" class="btn btn-primary">save</div>
+    </div>
     </section>
 </template>
