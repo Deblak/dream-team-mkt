@@ -13,7 +13,7 @@ class PanelComponentService {
   static async updateData(data) {
     let returnData = {}
     returnData = await axiosClient.post("/dreamteam/updateData",
-      {data}
+      data
     )
     return returnData.data;
   }

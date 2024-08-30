@@ -12,6 +12,6 @@ import PricingsProduct from '@/components/PricingsProduct.vue';
     <h1>Edit page</h1>
     <IdentityProduct/>
     <PanelComponent :isEditable=true />
-    <PricingsProduct/>
+    <PricingsProduct :isEditable=true />
   </main>
 </template>

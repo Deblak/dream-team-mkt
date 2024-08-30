@@ -12,16 +12,21 @@ import co.simplon.dream_team_mkt_business.services.OfferService;
 
 @Service
 public class OfferServiceImpl implements OfferService {
-    private final OfferRepository repository;
+	private final OfferRepository repository;
 
-    public OfferServiceImpl(OfferRepository repository) {
-	super();
-	this.repository = repository;
-    }
+	public OfferServiceImpl(OfferRepository repository) {
+		super();
+		this.repository = repository;
+	}
 
-    @Override
-    public List<OfferDto> getAll() {
-	List<Offer> offers = repository.findAll();
-	return OfferMapper.offersToOfferDtos(offers);
-    }
+	@Override
+	public List<OfferDto> getAll() {
+		List<Offer> offers = repository.findAll();
+		return OfferMapper.offersToOfferDtos(offers);
+	}
+
+	@Override
+	public void updateData(List<OfferDto> inputs) {
+//		List<Offer> offers = repository.findAll().stream().map( o ->  o.setCallToActionEn("tuytty")).toList();
+	}
 }

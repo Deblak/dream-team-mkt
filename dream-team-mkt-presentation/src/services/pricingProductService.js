@@ -7,20 +7,11 @@ class PricingProductService {
     await axiosClient.get('/offers').then(function (response) {
       datas = response.data;
     })
-
-    datas = datas.map( data => {
-      return {
-        nameOfferEn: data.nameOfferEn,
-        nameOfferFr: data.nameOfferFr,
-        priceOfferFr: data.priceOfferFr,
-        priceOfferEn: data.priceOfferEn,
-        planOfferFr: data.planOfferFr.split(","),
-        planOfferEn: data.planOfferEn.split(","),
-        callToActionFr: data.callToActionFr,
-        callToActionEn: data.callToActionEn
-      }
-    })
     return datas;
+  }
+
+  static async updateData(data) {
+    await axiosClient.post('offers/update', data)
   }
 
 }

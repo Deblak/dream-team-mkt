@@ -1,7 +1,5 @@
 package co.simplon.dream_team_mkt_business.controllers;
 
-import java.util.Map;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,8 +30,8 @@ public class DreamTeamIdController {
 
 	@PostMapping("/updateData")
 	@ResponseStatus(code = HttpStatus.OK)
-	public DreamTeamIdDto postMethodName(@RequestBody Map<String, DreamTeamIdDto> inputs) {
-		return service.updateData(inputs.get("data"));
+	public DreamTeamIdDto postMethodName(@RequestBody DreamTeamIdDto inputs) {
+		return service.updateData(inputs);
 	}
 
 }
