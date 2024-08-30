@@ -4,7 +4,7 @@
 <template>
     <header>
       <nav class="fixed-top navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid text-bg-primary p-3">
+    <div class="container-fluid text-bg-primary">
       <div class="nav-item d-flex justify-content-between">
             <router-link to="/" class="btn btn-primary">Home</router-link>
           </div>
