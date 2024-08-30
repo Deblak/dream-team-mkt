@@ -65,12 +65,12 @@ function submitData() {
 </script>
 
 <template>
-  <div class="container  border rounded-2 col-12">
+  <div class="container  col-12">
     <h1 class="text-center m-3">Contact form</h1>
-    <form novalidate class="d-flex flex-column mx-3 bg-light">
-      <div class="contact-form-container col-12">
+    <form novalidate class="d-flex flex-column mx-3 bg-light rounded-2">
+      <div class="contact-form-container">
         <div class="m-3 row">
-          <div class="field mx-3 col-10 col-lg-4">
+          <div class="">
             <label for="corporateName" class="form-label fs-5">Corporate names<span class="text-danger"><span
                   class="text-danger">*</span></span></label>
             <input v-model="inputFormData.corporateName" type="text" class="form-control"
@@ -81,7 +81,7 @@ function submitData() {
           </div>
         </div>
         <div class="row row-cols-lg-2 m-3">
-          <div class="col-10 col-lg-4">
+          <div class="">
             <div class="field mx-3">
               <label for="firstName" class="form-label fs-5">First name<span class="text-danger">*</span></label>
               <input v-model="inputFormData.firstName" type="text" class="form-control"
@@ -91,7 +91,7 @@ function submitData() {
                 blank, max 200 characters !</span>
             </div>
           </div>
-          <div class="col-10 col-lg-4">
+          <div class="">
             <div class="field mx-3">
               <label for="lastName" class="form-label fs-5">Last name<span class="text-danger">*</span></label>
               <input v-model="inputFormData.lastName" type="text" class="form-control"
@@ -103,7 +103,7 @@ function submitData() {
           </div>
         </div>
         <div class="row row-cols-lg-2 m-3">
-          <div class="col-10 col-lg-4">
+          <div >
             <div class="field mx-3 ">
               <label for="email" class="form-label fs-5">Email<span class="text-danger">*</span></label>
               <input v-model="inputFormData.email" type="email" class="form-control"
@@ -112,7 +112,7 @@ function submitData() {
               <span v-if="!inputFormDataIsValid.emailPhoneNumber" class="feedback fst-italic text-danger">Email or Phone number can't be blank !</span>
             </div>
           </div>
-          <div class="col-10 col-lg-4">
+          <div >
             <div class="field mx-3">
               <label for="phoneNumber" class="form-label fs-5">Phone number<span class="text-danger">*</span></label>
               <input v-model="inputFormData.phoneNumber" type="tel" class="form-control"
@@ -124,7 +124,7 @@ function submitData() {
           </div>
         </div>
         <div class="m-3 row">
-          <div class="field mx-3 col-10">
+          <div class="">
             <label for="message" class="form-label fs-5">Message<span class="text-danger">*</span></label>
             <textarea v-model="inputFormData.message" class="form-control" id="message"
               v-bind:class="{ borderIsRed: !inputFormDataIsValid.message }" rows="3" required placeholder="max 2000 characters"></textarea>
@@ -132,7 +132,7 @@ function submitData() {
           </div>
         </div>
         <div class="m-4 row justify-content-center">
-          <button v-on:click="submitData" class="btn btn-primary mt-4 col-12 col-lg-auto">SEND
+          <button v-on:click="submitData" class="btn btn-primary col-12 col-lg-auto">SEND
           </button>
         </div>
       </div>
