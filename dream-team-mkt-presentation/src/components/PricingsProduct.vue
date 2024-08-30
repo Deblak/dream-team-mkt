@@ -1,5 +1,5 @@
 <script setup>
-import { ref ,onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
 import PricingProductService from '../services/pricingProductService.js';
 
 const props = defineProps({
@@ -31,7 +31,9 @@ onMounted( async () => {
 })
 
 function toggleEdition() {
-  isInEdition.value = true;
+  //isInEdition.value = true;
+  isInEdition.value = !isInEdition.value;
+
 }
 
 async function saveChange() {
@@ -57,10 +59,10 @@ async function saveChange() {
       </div>
       <label >English</label>
       <div v-if="isInEdition" class="row row-cols-lg-3 bg-info-subtle">
-          <div v-for="data in datas" :key="data.nameOfferEn" class="p-2 text-center">
-            <input class="h3" v-model="data.nameOfferEn" type="text" />
-            <input class="h3" v-model="data.priceOfferEn" type="text" />
-            <textarea type="text" v-model="data.planOfferEn" ></textarea>
+        <div v-for="data in datas" :key="data.nameOfferEn" class="p-2 text-center">
+          <input class="h3" v-model="data.nameOfferEn" type="text" />
+          <input class="h3" v-model="data.priceOfferEn" type="text" />
+          <textarea type="text" v-model="data.planOfferEn"></textarea>
         </div>
       </div>
       <label >Français</label>
