@@ -24,8 +24,8 @@ public class DreamTeamIdController {
 
 	@GetMapping
 	@ResponseStatus(code = HttpStatus.OK)
-	public DreamTeamIdDto getAll() {
-		return service.getAll();
+	public DreamTeamIdDto get() {
+		return service.get();
 	}
 
 	@PostMapping("/updateData")

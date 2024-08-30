@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted, ref } from 'vue';
-import PanelComponentService from '../../services/panelComponentService.js'
+import PanelComponentService from '../services/panelComponentService.js'
 
 const props = defineProps({
   isEditable: Boolean
@@ -71,4 +71,4 @@ async function saveChange() {
     </div>
 
   </section>
-</template>
+</template>../services/panelComponentService.js

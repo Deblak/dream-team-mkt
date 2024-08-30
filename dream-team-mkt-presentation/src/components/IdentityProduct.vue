@@ -1,6 +1,6 @@
 <script setup>
-import axiosClient from '@/services/axiosClient';
 import { ref, onMounted } from 'vue';
+import IdentityProductService from '@/services/identityProductService';
 
 const props = defineProps({
     isEditable: Boolean
@@ -9,69 +9,60 @@ const props = defineProps({
 const dreamTeamId = ref({});
 const editDreamTeam = ref(false);
 
-/**(button onClick) Display edit function to edit the product*/
 const editIdProduct = () => {
     editDreamTeam.value = !editDreamTeam.value;
 }
 
-/**Tap text and display value */
 function onInput(e) {
     dreamTeamId.value.sloganEn = e.target.value
 }
 
-const inputDataIsValid = ref({
-    picture: true,
-    slogan: true
-})
-
-function submitData() {
-    axiosClient.post('/dreamteam/updateData', dreamTeamId.value);
-    editDreamTeam.value = false;
+async function submitData() {
+  dreamTeamId.value = await IdentityProductService.updateData(dreamTeamId.value);
+  editDreamTeam.value = false;
 }
 
-onMounted(() => {
-    axiosClient.get('/dreamteam')
-        .then(response => {
-            dreamTeamId.value = response.data;
-        });
+onMounted( async() => {
+  dreamTeamId.value = await IdentityProductService.fetchData();
 })
 
 </script>
 <template>
-    <section>
-        <div class="text-end editStyle mb-3">
-            <button v-if="props.isEditable" class="me-5 btn btn-info" @click="editIdProduct">
-                <i class="h4 text-white bi bi-pencil-square"></i>
-            </button>
-            <div class="d-flex flex-wrap flex-lg-nowrap g-3 align-items-center justify-content-center">
-                <div class="col-12 col-lg-8 order-1 order-lg-0">
-                    <div>
-                        <img :src="dreamTeamId.picture" alt="example identity picture"
-                            class="col-12 img-fluid bannerPicture">
-                    </div>
-                </div>
-                <div class="mx-lg-auto text-center p-2 h4">
-                    <div>
-                        {{ dreamTeamId.sloganEn }}
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex flex-wrap align-items-center justify-content-center mx-5 mb-3" v-if="editDreamTeam">
-                <div class="col-12 col-lg-4 d-flex">
-                    <input type="text" v-model="dreamTeamId.picture" class="form-control mt-2" placeholder="Upload a new image"
-                        :v-bind:class="{ borderIsRed: !inputDataIsValid.picture }" required>
-                    <i class="h3 m-2 bi bi-filetype-jpg"></i>
-                </div>
-                <div class="col-12 col-lg-4 mx-3">
-                    <input :value="dreamTeamId.sloganEn" v-if="editDreamTeam" @input="onInput"
-                        :placeholder="dreamTeamId.sloganEn" class="form-control mt-2">
-                </div>
-                <div class="text-end my-3">
-                    <button v-on:click="submitData" type="submit" class="btn btn-primary">SAVE</button>
-                </div>
-            </div>
+  <section>
+    <div class="text-end editStyle mb-3">
+    <button v-if="props.isEditable" class="me-5 btn btn-info" @click="editIdProduct">
+      <i class="h4 text-white bi bi-pencil-square"></i>
+    </button>
+      <div class="d-flex flex-wrap flex-lg-nowrap g-3 align-items-center justify-content-center">
+        <div class="col-12 col-lg-8 order-1 order-lg-0">
+          <div>
+            <img :src="dreamTeamId.picture" alt="example identity picture"
+              class="col-12 img-fluid bannerPicture">
+          </div>
         </div>
-    </section>
+        <div class="mx-lg-auto text-center p-2 h4">
+          <div>
+            {{ dreamTeamId.sloganEn }}
+          </div>
+        </div>
+      </div>
+      <div class="d-flex flex-wrap align-items-center justify-content-center mx-5 mb-3" v-if="editDreamTeam">
+        <div class="col-12 col-lg-4 d-flex">
+          <input type="text" v-model="dreamTeamId.picture" class="form-control mt-2" placeholder="Upload a new image" required>
+            <i class="h3 m-2 bi bi-filetype-jpg"></i>
+        </div>
+        <div class="col-12 col-lg-4 mx-3">
+          <input :value="dreamTeamId.sloganEn" v-if="editDreamTeam" @input="onInput"
+            :placeholder="dreamTeamId.sloganEn" class="form-control mt-2">
+        </div>
+        <div class="text-end my-3">
+          <button v-on:click="submitData" type="submit" class="btn btn-primary">
+            SAVE
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 <style scoped>
 .bannerPicture {
