@@ -7,22 +7,14 @@
         <div class="nav-item d-flex">
           <router-link to="/" class="btn btn-primary">Home</router-link>
         </div>
-
         <div class="collapse navbar-collapse d-flex justify-content-center">
           <a class="navbar-brand" href="#">DreamTeam</a>
         </div>
-
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-auto">
-
-          <!-- <div class="nav-item d-flex justify-content-between">
-                <router-link to="/edit" class="btn btn-primary">Edit page</router-link>
-              </div> -->
-              
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="navbarSupportedContent"
             >
