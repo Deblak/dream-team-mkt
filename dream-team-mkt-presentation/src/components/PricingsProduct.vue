@@ -14,7 +14,6 @@ onMounted( async () => {
 })
 
 function toggleEdition() {
-  //isInEdition.value = true;
   isInEdition.value = !isInEdition.value;
 }
 
@@ -32,13 +31,10 @@ function splitPlanOffer(params) {
 
 <template>
     <section class="text-end">
-
   <button v-if="props.isEditable" class="me-5 btn btn-info mt-3" @click="toggleEdition">
-
       <i class="h4 text-white bi bi-pencil-square"></i>
     </button>
     <div class="container ">
-
         <label v-if="props.isEditable && isInEdition">English</label>
         <div class="row row-cols-lg-3 bg-info-subtle">
           <div v-for="data in datas" :key="data" class="p-2 text-center">

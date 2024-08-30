@@ -6,13 +6,11 @@ const props = defineProps({
     isEditable: Boolean
 })
 
-console.log(props.isEditable)
 const dreamTeamId = ref({});
 const editDreamTeam = ref(false);
 
 /**(button onClick) Display edit function to edit the product*/
 const editIdProduct = () => {
-    console.log("I believe I can click !");
     editDreamTeam.value = !editDreamTeam.value;
 }
 
@@ -35,7 +33,6 @@ onMounted(() => {
     axiosClient.get('/dreamteam')
         .then(response => {
             dreamTeamId.value = response.data;
-            console.log(dreamTeamId);
         });
 })
 
@@ -56,20 +53,13 @@ onMounted(() => {
                 <div class="mx-lg-auto text-center p-2 h4">
                     <div>
                         {{ dreamTeamId.sloganEn }}
-
                     </div>
                 </div>
-
-
             </div>
-            <!-- Test champ saisie-->
-            <div class="d-flex flex-wrap align-items-center justify-content-center mx-5 mb-3" v-if="editDreamTeam"
-                @submit="">
-
+            <div class="d-flex flex-wrap align-items-center justify-content-center mx-5 mb-3" v-if="editDreamTeam">
                 <div class="col-12 col-lg-4 d-flex">
                     <input type="text" v-model="dreamTeamId.picture" class="form-control mt-2" placeholder="Upload a new image"
                         :v-bind:class="{ borderIsRed: !inputDataIsValid.picture }" required>
-
                     <i class="h3 m-2 bi bi-filetype-jpg"></i>
                 </div>
                 <div class="col-12 col-lg-4 mx-3">
@@ -80,7 +70,6 @@ onMounted(() => {
                     <button v-on:click="submitData" type="submit" class="btn btn-primary">SAVE</button>
                 </div>
             </div>
-
         </div>
     </section>
 </template>

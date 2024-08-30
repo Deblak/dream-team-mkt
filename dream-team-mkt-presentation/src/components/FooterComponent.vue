@@ -1,7 +1,5 @@
 <script setupt></script>
 <template>
-
-
     <footer class="
     text-center bg-primary">
             <ul class="d-lg-flex justify-content-center p-0">
@@ -11,7 +9,5 @@
         <small class="mt-2">
             <a href="http://" target="_blank" rel="noopener noreferrer" class="text-bg-primary nav-link">Legal informations</a>
         </small>
-        
-
     </footer>
 </template>
