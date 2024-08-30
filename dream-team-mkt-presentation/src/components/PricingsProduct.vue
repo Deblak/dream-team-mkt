@@ -60,9 +60,7 @@ async function saveChange() {
   </div>
   <section class="text-end">
     <button v-if="props.isEditable" class="me-5 btn btn-info mt-3" @click="toggleEdition">
-      <!-- <button v-if="props.isEditable && !isInEdition" class="me-5 btn btn-info" @click="toggleEdition"> -->
       <i class="h4 text-white bi bi-pencil-square"></i>
-
     </button>
     <div class="container">
       <div class="row row-cols-lg-3 bg-info-subtle">

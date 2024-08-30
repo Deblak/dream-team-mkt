@@ -19,7 +19,7 @@ const updateValue = ref('');
 
 /**Tap text and display value */
 function onInput(e) {
-    dreamTeamId.value.sloganEn = e.target.value
+    dreamTeamId.value.sloganFr = e.target.value
 }
 
 const inputDataIsValid = ref({
@@ -42,7 +42,7 @@ onMounted(() => {
 </script>
 <template>
     <section>
-        <div class="text-end">
+        <div class="text-end editStyle mb-3">
             <button v-if="props.isEditable" class="me-5 btn btn-info" @click="editIdProduct">
                 <i class="h4 text-white bi bi-pencil-square"></i>
             </button>
@@ -59,10 +59,13 @@ onMounted(() => {
 
                     </div>
                 </div>
+
+
             </div>
             <!-- Test champ saisie-->
-            <div class="d-flex flex-wrap align-items-center mx-5 justify-content-end" v-if="editDreamTeam"
+            <div class="d-flex flex-wrap align-items-center justify-content-center mx-5 mb-3" v-if="editDreamTeam"
                 @submit="">
+
                 <div class="col-12 col-lg-4 d-flex">
                     <input type="text" v-model="updateValue" class="form-control mt-2" placeholder="Upload a new image"
                         :v-bind:class="{ borderIsRed: !inputDataIsValid.picture }" required>
@@ -73,8 +76,11 @@ onMounted(() => {
                     <input :value="dreamTeamId.sloganEn" v-if="editDreamTeam" @input="onInput"
                         :placeholder="dreamTeamId.sloganEn" class="form-control mt-2">
                 </div>
-                <button v-on:click="submitData" type="submit" class="btn btn-primary">SAVE</button>
+                <div class="text-end my-3">
+                    <button v-on:click="submitData" type="submit" class="btn btn-primary">SAVE</button>
+                </div>
             </div>
+
         </div>
     </section>
 </template>
