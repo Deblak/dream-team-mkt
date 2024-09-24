@@ -10,10 +10,9 @@ import PricingsProduct from '@/components/PricingsProduct.vue';
     <HeaderComponet/>
     <h1>Edit page</h1>
     <div>
-      <IdentityProduct :isEditable="true"/>
+      <IdentityProduct :isEditable=true />
     </div>
     <PanelComponent :isEditable=true />
     <PricingsProduct :isEditable=true />
   </main>
 </template>
-
