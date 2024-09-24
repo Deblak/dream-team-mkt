@@ -13,6 +13,7 @@ import PricingsProduct from '@/components/PricingsProduct.vue';
     <h1>home page</h1>
     <IdentityProduct :isEditable=false />
     <PanelComponent :isEditable=false />
+    <h1>{{ $t('test') }}</h1>
     <PricingsProduct :isEditable=false />
     <ContactForm />
     <FooterComponenet/>
