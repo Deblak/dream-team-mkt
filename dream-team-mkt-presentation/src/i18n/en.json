@@ -1,3 +1,20 @@
 {
-  "test":" Hello test"
+  "dreamTeam": "DreamTeam",
+  "homePage": "Homepage",
+  "editPage": "Edit page",
+  "legalInformation": "Legal informations",
+  "contactForm": "Contact form",
+  "corporateName": "Corporate names",
+  "corporateNameValidation": "Corporate name can't be blank, max 200 characters !",
+  "firstName": "First name",
+  "firstNameValidation": "First name can't be blank, max 200 characters !",
+  "lastName": "Last name",
+  "lastNameValidation": "Last name can't be blank, max 200 characters !",
+  "email": "Email",
+  "emailAndPhoneValidation": "Email or Phone number can't be blank !",
+  "phone": "Phone number",
+  "message": "Message",
+  "messageValidation": "Max 2000 characters or can't be blank !",
+  "send": "SEND",
+  "save": "SAVE"
 }

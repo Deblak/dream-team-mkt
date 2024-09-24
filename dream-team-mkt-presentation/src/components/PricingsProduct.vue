@@ -63,7 +63,7 @@ function splitPlanOffer(params) {
         <textarea type="text" v-model="data.planOfferFr" ></textarea>
       </div>
     </div>
-    <div v-if="props.isEditable && isInEdition" @click="saveChange" class="btn btn-primary">save</div>
+    <div v-if="props.isEditable && isInEdition" @click="saveChange" class="btn btn-primary">{{$t('save')}}</div>
     </div>
     </section>
 </template>

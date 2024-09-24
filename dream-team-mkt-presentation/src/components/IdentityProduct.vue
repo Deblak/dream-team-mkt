@@ -57,7 +57,7 @@ onMounted( async() => {
         </div>
         <div class="text-end my-3">
           <button v-on:click="submitData" type="submit" class="btn btn-primary">
-            SAVE
+            {{$t('save')}}
           </button>
         </div>
       </div>

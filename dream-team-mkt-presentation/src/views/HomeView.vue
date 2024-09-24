@@ -10,10 +10,9 @@ import PricingsProduct from '@/components/PricingsProduct.vue';
 <template>
   <main>
     <HeaderComponant/>
-    <h1>home page</h1>
+    <h1>{{ $t('homePage')}}</h1>
     <IdentityProduct :isEditable=false />
     <PanelComponent :isEditable=false />
-    <h1>{{ $t('test') }}</h1>
     <PricingsProduct :isEditable=false />
     <ContactForm />
     <FooterComponenet/>

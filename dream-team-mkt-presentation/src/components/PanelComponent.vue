@@ -66,7 +66,7 @@ async function saveChange() {
         </div>
       </div>
       <div class="text-end">
-        <div v-if="props.isEditable && isInEdition" @click="saveChange" class="btn btn-primary mb-3">SAVE</div>
+        <div v-if="props.isEditable && isInEdition" @click="saveChange" class="btn btn-primary mb-3">{{$t('save')}}</div>
       </div>
     </div>
 
