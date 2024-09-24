@@ -16,5 +16,7 @@
   "message": "Message",
   "messageValidation": "Le message ne peut pas être vide, 200 characters max !",
   "send": "Envoyé",
-  "save": "Sauvegarder"
+  "save": "Sauvegarder",
+  "english": "Anglais",
+  "french": "Français"
 }

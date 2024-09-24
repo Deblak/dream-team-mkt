@@ -16,5 +16,7 @@
   "message": "Message",
   "messageValidation": "Max 2000 characters or can't be blank !",
   "send": "SEND",
-  "save": "SAVE"
+  "save": "SAVE",
+  "english": "English",
+  "french": "French"
 }

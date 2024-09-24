@@ -8,6 +8,7 @@ const props = defineProps({
 
 const dreamTeamId = ref({});
 const editDreamTeam = ref(false);
+const language = navigator.language;
 
 const editIdProduct = () => {
     editDreamTeam.value = !editDreamTeam.value;
@@ -41,9 +42,8 @@ onMounted( async() => {
           </div>
         </div>
         <div class="mx-lg-auto text-center p-2 h4">
-          <div>
-            {{ dreamTeamId.sloganEn }}
-          </div>
+          <div v-if="language === 'fr-FR'">{{ dreamTeamId.sloganFr }}</div>
+          <div v-else>{{ dreamTeamId.sloganEn }}</div>
         </div>
       </div>
       <div class="d-flex flex-wrap align-items-center justify-content-center mx-5 mb-3" v-if="editDreamTeam">
