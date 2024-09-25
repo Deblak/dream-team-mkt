@@ -1,8 +1,9 @@
 DELETE FROM t_dream_team_identity ;
 DELETE FROM t_offers ;
 
-INSERT INTO t_dream_team_identity (picture,slogan_fr,slogan_en, panel_1_desc_fr, panel_1_desc_en,panel_2_desc_fr, panel_2_desc_en) VALUES
+INSERT INTO t_dream_team_identity (picture_fr, picture_en ,slogan_fr,slogan_en, panel_1_desc_fr, panel_1_desc_en,panel_2_desc_fr, panel_2_desc_en) VALUES
 ('https://images.unsplash.com/photo-1611517976630-163467322778?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+'https://images.unsplash.com/photo-1611517976630-163467322778?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
 'Une carrière de rêve pour vos développeurs !',
 'A dream career for your developers!',
 '1 Lorem ipsum dolor français',
