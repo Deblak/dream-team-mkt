@@ -14,10 +14,6 @@ const editIdProduct = () => {
     editDreamTeam.value = !editDreamTeam.value;
 }
 
-function onInput(e) {
-    dreamTeamId.value.sloganEn = e.target.value
-}
-
 async function submitData() {
   dreamTeamId.value = await IdentityProductService.updateData(dreamTeamId.value);
   editDreamTeam.value = false;
@@ -65,7 +61,7 @@ onMounted( async() => {
         </div>
         <label >{{ $t('english') }}</label>
         <div class="col-12 col-lg-4 mx-3">
-          <input :value="dreamTeamId.sloganEn" v-if="editDreamTeam" @input="onInput"
+          <input v-model="dreamTeamId.sloganEn"
             :placeholder="dreamTeamId.sloganEn" class="form-control mt-2">
         </div>
     </div>
@@ -77,7 +73,7 @@ onMounted( async() => {
         </div>
         <label >{{ $t('french') }}</label>
         <div class="col-12 col-lg-4 mx-3">
-          <input :value="dreamTeamId.sloganFr" v-if="editDreamTeam" @input="onInput"
+          <input v-model="dreamTeamId.sloganFr"
             :placeholder="dreamTeamId.sloganFr" class="form-control mt-2">
         </div>
     </div>
