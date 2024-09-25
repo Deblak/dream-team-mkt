@@ -18,5 +18,8 @@
   "send": "SEND",
   "save": "SAVE",
   "english": "English",
-  "french": "French"
+  "french": "French",
+  "200MaxChar": "max 200 characters",
+  "exempleIdentityPicture": "example identity picture",
+  "uploadNewimage": "Upload a new image"
 }

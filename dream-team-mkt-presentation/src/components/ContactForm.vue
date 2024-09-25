@@ -77,7 +77,7 @@ function submitData() {
             </label>
             <input v-model="inputFormData.corporateName" type="text" class="form-control"
               v-bind:class="{ borderIsRed: !inputFormDataIsValid.corporateName }" id="corporateName"
-              placeholder="max 200 characters" required>
+              v-bind:placeholder="$t('200MaxChar')" required>
             <span v-if="!inputFormDataIsValid.corporateName" class="feedback fst-italic text-danger">
               {{ $t('corporateNameValidation')}}
             </span>
@@ -91,7 +91,7 @@ function submitData() {
               </label>
               <input v-model="inputFormData.firstName" type="text" class="form-control"
                 v-bind:class="{ borderIsRed: !inputFormDataIsValid.firstName }" id="firstName"
-                placeholder="max 200 characters" required>
+                v-bind:placeholder="$t('200MaxChar')" required>
               <span v-if="!inputFormDataIsValid.firstName" class="feedback fst-italic text-danger">
                 {{ $t('firstNameValidation')}}
               </span>
@@ -102,7 +102,7 @@ function submitData() {
               <label for="lastName" class="form-label fs-5">{{ $t('lastName')}}<span class="text-danger">*</span></label>
               <input v-model="inputFormData.lastName" type="text" class="form-control"
                 v-bind:class="{ borderIsRed: !inputFormDataIsValid.lastName }" id="lastName"
-                placeholder="max 200 characters" required>
+                v-bind:placeholder="$t('200MaxChar')" required>
               <span v-if="!inputFormDataIsValid.lastName" class="feedback fst-italic text-danger">
                 {{ $t('lastNameValidation')}}
               </span>
@@ -117,7 +117,7 @@ function submitData() {
               </label>
               <input v-model="inputFormData.email" type="email" class="form-control"
                 v-bind:class="{ borderIsRed: !inputFormDataIsValid.emailPhoneNumber }" id="email"
-                placeholder="email or Phone number can't be blank">
+                v-bind:placeholder="$t('emailAndPhoneValidation')">
               <span v-if="!inputFormDataIsValid.emailPhoneNumber" class="feedback fst-italic text-danger">
                 {{ $t('emailAndPhoneValidation')}}
               </span>
@@ -130,7 +130,7 @@ function submitData() {
               </label>
               <input v-model="inputFormData.phoneNumber" type="tel" class="form-control"
                 v-bind:class="{ borderIsRed: !inputFormDataIsValid.emailPhoneNumber }" id="phoneNumber"
-                placeholder="email or Phone number can't be blank">
+                v-bind:placeholder="$t('emailAndPhoneValidation')">
               <span v-if="!inputFormDataIsValid.emailPhoneNumber" class="feedback fst-italic text-danger">
                 {{ $t('emailAndPhoneValidation')}}
               </span>
@@ -143,7 +143,7 @@ function submitData() {
               {{ $t('message')}}<span class="text-danger">*</span>
             </label>
             <textarea v-model="inputFormData.message" class="form-control" id="message"
-              v-bind:class="{ borderIsRed: !inputFormDataIsValid.message }" rows="3" required placeholder="max 2000 characters"></textarea>
+              v-bind:class="{ borderIsRed: !inputFormDataIsValid.message }" rows="3" required v-bind:placeholder="$t('200MaxChar')"></textarea>
             <span v-if="!inputFormDataIsValid.message" class="feedback fst-italic text-danger">
               {{ $t('messageValidation')}}
             </span>

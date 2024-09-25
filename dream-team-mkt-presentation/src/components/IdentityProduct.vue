@@ -41,9 +41,9 @@ onMounted( async() => {
               <label v-if="language === 'fr-FR'">{{$t('french')}}</label>
               <label v-else>{{$t('english')}}</label>
             </div>
-            <img v-if="language === 'fr-FR'" :src="dreamTeamId.picture_fr" alt="example identity picture"
+            <img v-if="language === 'fr-FR'" :src="dreamTeamId.picture_fr" v-bind:alt="$t('exempleIdentityPicture')"
               class="col-12 img-fluid bannerPicture">
-              <img v-else :src="dreamTeamId.picture_en" alt="example identity picture"
+              <img v-else :src="dreamTeamId.picture_en" v-bind:alt="$t('exempleIdentityPicture')"
               class="col-12 img-fluid bannerPicture">
           </div>
         </div>
@@ -60,7 +60,7 @@ onMounted( async() => {
         <div class="d-flex flex-wrap align-items-center justify-content-center mx-5 mb-3">
           <label >{{ $t('english') }}</label>
           <div class="col-12 col-lg-4 d-flex">
-            <input type="text" v-model="dreamTeamId.picture_en" class="form-control mt-2" placeholder="Upload a new image" required>
+            <input type="text" v-model="dreamTeamId.picture_en" class="form-control mt-2" v-bind:placeholder="$t('uploadNewimage')" required>
             <i class="h3 m-2 bi bi-filetype-jpg"></i>
         </div>
         <label >{{ $t('english') }}</label>
@@ -72,7 +72,7 @@ onMounted( async() => {
     <div class="d-flex flex-wrap align-items-center justify-content-center mx-5 mb-3">
         <label >{{ $t('french') }}</label>
         <div class="col-12 col-lg-4 d-flex">
-          <input type="text" v-model="dreamTeamId.picture_fr" class="form-control mt-2" placeholder="Upload a new image" required>
+          <input type="text" v-model="dreamTeamId.picture_fr" class="form-control mt-2" v-bind:placeholder="$t('uploadNewimage')" required>
             <i class="h3 m-2 bi bi-filetype-jpg"></i>
         </div>
         <label >{{ $t('french') }}</label>
