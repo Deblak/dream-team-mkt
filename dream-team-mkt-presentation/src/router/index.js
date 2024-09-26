@@ -26,6 +26,11 @@ const router = createRouter({
       path: '/edit-terms',
       name: 'edit-terms',
       component: () => import('../views/EditGeneralTerms.vue')
+    },
+    {
+      path:'/pricing',
+      name:'pricing',
+      component: () => import('../views/PricingView.vue')
     }
 
   ]
