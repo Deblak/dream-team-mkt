@@ -11,7 +11,7 @@
       </li>
     </ul>
     <small class="mt-2">
-      <a href="http://" target="_blank" rel="noopener noreferrer" class="text-bg-primary nav-link">Legal informations</a>
+      <router-link to="/terms" class="text-bg-primary nav-link">Legal informations</router-link>
     </small>
   </footer>
 </template>
