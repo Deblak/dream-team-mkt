@@ -21,5 +21,7 @@
   "french": "Français",
   "200MaxChar": "max 200 characters",
   "exempleIdentityPicture": "example d'image d'indentité",
-  "uploadNewimage": "charger une nouvelle image"
+  "uploadNewimage": "charger une nouvelle image",
+  "pricingPage":"Abonnements prix",
+  "viewMore" : "En voir plus"
 }

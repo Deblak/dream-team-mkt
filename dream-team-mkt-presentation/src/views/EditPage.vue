@@ -7,7 +7,9 @@ import PricingsProduct from '@/components/PricingsProduct.vue';
 </script>
 <template>
   <main>
-    <HeaderComponet/>
+    <div class="container p-5">
+      <HeaderComponet/>
+    </div>
     <h1>{{ $t('editPage')}}</h1>
     <div>
       <IdentityProduct :isEditable=true />

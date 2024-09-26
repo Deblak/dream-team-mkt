@@ -9,7 +9,9 @@ import PricingsProduct from '@/components/PricingsProduct.vue';
 
 <template>
   <main>
-    <HeaderComponant/>
+    <div class="container p-5">
+      <HeaderComponant/>
+    </div>
     <h1>{{ $t('homePage')}}</h1>
     <IdentityProduct :isEditable=false />
     <PanelComponent :isEditable=false />
