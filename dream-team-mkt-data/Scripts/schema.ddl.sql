@@ -12,6 +12,8 @@ CREATE TABLE t_offers(
    plan_offer_en VARCHAR(1000) NOT null,
    call_to_action_fr VARCHAR(200) NOT null, --data
    call_to_action_en VARCHAR(200) NOT null, --data
+    detail_plan_offer_fr TEXT NOT NULL,
+    detail_plan_offer_en TEXT NOT NULL,
    CONSTRAINT t_offers_pkey PRIMARY KEY (id_offer)
 );
 
