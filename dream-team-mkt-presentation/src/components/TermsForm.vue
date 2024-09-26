@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted, ref } from 'vue';
-import TermsFormService from '../services/TermsFormService';
+import TermsFormService from '../services/termsFormService';
 
 const termsForm = ref("");
 
