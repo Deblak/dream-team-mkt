@@ -6,6 +6,7 @@ const props = defineProps({
     isEditable: Boolean
 })
 
+
 const dreamTeamId = ref({});
 const editDreamTeam = ref(false);
 const language = navigator.language;
