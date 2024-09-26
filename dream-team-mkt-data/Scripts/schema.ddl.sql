@@ -19,13 +19,14 @@ CREATE TABLE t_offers(
 
 CREATE TABLE t_dream_team_identity(
 	id_identity bigint GENERATED ALWAYS AS IDENTITY,
-	picture VARCHAR(1000) NOT null,
+	picture_fr VARCHAR(1000) NOT NULL,
+	picture_en VARCHAR(1000) NOT NULL,
 	slogan_fr VARCHAR(300) NOT NULL,
-	slogan_en VARCHAR(300) NOT null,
-	panel_1_desc_fr VARCHAR(2000) NOT null,
-	panel_1_desc_en VARCHAR(2000) NOT null,
-	panel_2_desc_fr VARCHAR(2000) NOT null,
-	panel_2_desc_en VARCHAR(2000) NOT null,
+	slogan_en VARCHAR(300) NOT NULL,
+	panel_1_desc_fr VARCHAR(2000) NOT NULL,
+	panel_1_desc_en VARCHAR(2000) NOT NULL,
+	panel_2_desc_fr VARCHAR(2000) NOT NULL,
+	panel_2_desc_en VARCHAR(2000) NOT NULL,
    CONSTRAINT t_dream_team_identity_pkey PRIMARY KEY (id_identity)
 );
 

@@ -12,7 +12,7 @@ import PricingsProduct from '@/components/PricingsProduct.vue';
     </div>
     <h1>{{ $t('editPage')}}</h1>
     <div>
-      <IdentityProduct :isEditable="true"/>
+      <IdentityProduct :isEditable=true />
     </div>
     <PanelComponent :isEditable=true />
     <PricingsProduct :isEditable=true />

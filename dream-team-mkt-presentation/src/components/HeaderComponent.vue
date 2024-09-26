@@ -19,7 +19,7 @@
           <li class="nav-item dropdown">
             <ul class="dropdown-menu dropdown-menu-end" aria-controls="navbarSupportedContent">
               <li>
-                <router-link  to="/edit" href="#" class="btn btn-primary dropdown-item">Edit page</router-link>
+                <router-link  to="/edit" href="#" class="btn btn-primary dropdown-item">{{$t('editPage')}}</router-link>
               </li>
               <li>
                 <a class="dropdown-item" href="#">Action</a>

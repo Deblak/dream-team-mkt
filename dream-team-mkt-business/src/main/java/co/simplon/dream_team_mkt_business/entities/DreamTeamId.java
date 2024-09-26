@@ -10,103 +10,118 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "t_dream_team_identity")
 public class DreamTeamId {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_identity")
-    private Long idIdentity;
 
-    @Column(name = "picture")
-    private String picture;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_identity")
+	private Long idIdentity;
 
-    @Column(name = "slogan_fr")
-    private String sloganFr;
-    @Column(name = "slogan_en")
-    private String sloganEn;
+	@Column(name = "picture_fr")
+	private String pictureFr;
 
-    @Column(name = "panel_1_desc_fr")
-    private String panelOneDescFr;
-    @Column(name = "panel_1_desc_en")
-    private String panelOneDescEn;
+	@Column(name = "picture_en")
+	private String pictureEn;
 
-    @Column(name = "panel_2_desc_fr")
-    private String panelTwoDescFr;
-    @Column(name = "panel_2_desc_en")
-    private String panelTwoDescEn;
+	@Column(name = "slogan_fr")
+	private String sloganFr;
 
-    public DreamTeamId() {
-	// Default ORM
-    }
+	@Column(name = "slogan_en")
+	private String sloganEn;
 
-    public Long getIdIdentity() {
-	return idIdentity;
-    }
+	@Column(name = "panel_1_desc_fr")
+	private String panelOneDescFr;
 
-    @SuppressWarnings("unused")
-    private void setIdIdentity(Long idIdentity) {
-	this.idIdentity = idIdentity;
-    }
+	@Column(name = "panel_1_desc_en")
+	private String panelOneDescEn;
 
-    public String getPicture() {
-	return picture;
-    }
+	@Column(name = "panel_2_desc_fr")
+	private String panelTwoDescFr;
 
-    public void setPicture(String picture) {
-	this.picture = picture;
-    }
+	@Column(name = "panel_2_desc_en")
+	private String panelTwoDescEn;
 
-    public String getSloganFr() {
-	return sloganFr;
-    }
+	public DreamTeamId() {
+		// Default ORM
+	}
 
-    public void setSloganFr(String sloganFr) {
-	this.sloganFr = sloganFr;
-    }
+	public Long getIdIdentity() {
+		return idIdentity;
+	}
 
-    public String getSloganEn() {
-	return sloganEn;
-    }
+	@SuppressWarnings("unused")
+	private void setIdIdentity(Long idIdentity) {
+		this.idIdentity = idIdentity;
+	}
 
-    public void setSloganEn(String sloganEn) {
-	this.sloganEn = sloganEn;
-    }
+	public String getPictureFr() {
+		return pictureFr;
+	}
 
-    public String getPanelOneDescFr() {
-	return panelOneDescFr;
-    }
+	public void setPictureFr(String pictureFr) {
+		this.pictureFr = pictureFr;
+	}
 
-    public void setPanelOneDescFr(String panelOneDescFr) {
-	this.panelOneDescFr = panelOneDescFr;
-    }
+	public String getPictureEn() {
+		return pictureEn;
+	}
 
-    public String getPanelOneDescEn() {
-	return panelOneDescEn;
-    }
+	public void setPictureEn(String pictureEn) {
+		this.pictureEn = pictureEn;
+	}
 
-    public void setPanelOneDescEn(String panelOneDescEn) {
-	this.panelOneDescEn = panelOneDescEn;
-    }
+	public String getSloganFr() {
+		return sloganFr;
+	}
 
-    public String getPanelTwoDescFr() {
-	return panelTwoDescFr;
-    }
+	public void setSloganFr(String sloganFr) {
+		this.sloganFr = sloganFr;
+	}
 
-    public void setPanelTwoDescFr(String panelTwoDescFr) {
-	this.panelTwoDescFr = panelTwoDescFr;
-    }
+	public String getSloganEn() {
+		return sloganEn;
+	}
 
-    public String getPanelTwoDescEn() {
-	return panelTwoDescEn;
-    }
+	public void setSloganEn(String sloganEn) {
+		this.sloganEn = sloganEn;
+	}
 
-    public void setPanelTwoDescEn(String panelTwoDescEn) {
-	this.panelTwoDescEn = panelTwoDescEn;
-    }
+	public String getPanelOneDescFr() {
+		return panelOneDescFr;
+	}
 
-    @Override
-    public String toString() {
-	return "DreamTeamIdentity [idIdentity=" + idIdentity + ", picture=" + picture + ", sloganFr=" + sloganFr
-		+ ", sloganEn=" + sloganEn + ", panelOneDescFr=" + panelOneDescFr + ", panelOneDescEn=" + panelOneDescEn
-		+ ", panelTwoDescFr=" + panelTwoDescFr + ", panelTwoDescEn=" + panelTwoDescEn + "]";
-    }
+	public void setPanelOneDescFr(String panelOneDescFr) {
+		this.panelOneDescFr = panelOneDescFr;
+	}
+
+	public String getPanelOneDescEn() {
+		return panelOneDescEn;
+	}
+
+	public void setPanelOneDescEn(String panelOneDescEn) {
+		this.panelOneDescEn = panelOneDescEn;
+	}
+
+	public String getPanelTwoDescFr() {
+		return panelTwoDescFr;
+	}
+
+	public void setPanelTwoDescFr(String panelTwoDescFr) {
+		this.panelTwoDescFr = panelTwoDescFr;
+	}
+
+	public String getPanelTwoDescEn() {
+		return panelTwoDescEn;
+	}
+
+	public void setPanelTwoDescEn(String panelTwoDescEn) {
+		this.panelTwoDescEn = panelTwoDescEn;
+	}
+
+	@Override
+	public String toString() {
+		return "{idIdentity=" + idIdentity + ", pictureFr=" + pictureFr + ", pictureEn=" + pictureEn + ", sloganFr=" + sloganFr + ", sloganEn=" + sloganEn
+				+ ", panelOneDescFr=" + panelOneDescFr + ", panelOneDescEn=" + panelOneDescEn + ", panelTwoDescFr=" + panelTwoDescFr + ", panelTwoDescEn="
+				+ panelTwoDescEn + "}";
+	}
 
 }
