@@ -1,5 +1,6 @@
 DROP TABLE IF EXISTS t_offers;
 DROP TABLE IF EXISTS t_dream_team_identity;
+drop table IF exists t_terms;
 
 CREATE TABLE t_offers(
 	id_offer bigint GENERATED ALWAYS AS IDENTITY,
@@ -24,4 +25,11 @@ CREATE TABLE t_dream_team_identity(
 	panel_2_desc_fr VARCHAR(2000) NOT null,
 	panel_2_desc_en VARCHAR(2000) NOT null,
    CONSTRAINT t_dream_team_identity_pkey PRIMARY KEY (id_identity)
+);
+
+
+create table t_terms (
+	id_terms bigint GENERATED always as identity,
+	terms text not null,
+	CONSTRAINT t_dream_team_terms_pkey PRIMARY KEY (id_terms)
 );
