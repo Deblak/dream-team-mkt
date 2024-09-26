@@ -32,6 +32,10 @@ public class Offer {
 	private String callToActionFr;
 	@Column(name = "call_to_action_en")
 	private String callToActionEn;
+	@Column(name="detail_plan_offer_fr")
+	private String detailPlanOfferFr;
+	@Column(name="detail_plan_offer_en")
+	private String detailPlanOfferEn;
 
 	public Long getIdOffer() {
 		return idOffer;
@@ -105,11 +109,27 @@ public class Offer {
 		this.callToActionEn = callToActionEn;
 	}
 
+	public String getDetailPlanOfferFr() {
+		return detailPlanOfferFr;
+	}
+
+	public void setDetailPlanOfferFr(String detailPlanOfferFr) {
+		this.detailPlanOfferFr = detailPlanOfferFr;
+	}
+
+	public String getDetailPlanOfferEn() {
+		return detailPlanOfferEn;
+	}
+
+	public void setDetailPlanOfferEn(String detailPlanOfferEn) {
+		this.detailPlanOfferEn = detailPlanOfferEn;
+	}
+
 	@Override
 	public String toString() {
 		return "Offer [idOffer=" + idOffer + ", nameOfferFr=" + nameOfferFr + ", nameOfferEn=" + nameOfferEn + ", priceOfferFr=" + priceOfferFr
 				+ ", priceOfferEn=" + priceOfferEn + ", planOfferFr=" + planOfferFr + ", planOfferEn=" + planOfferEn + ", callToActionFr=" + callToActionFr
-				+ ", callToActionEn=" + callToActionEn + "]";
+				+ ", callToActionEn=" + callToActionEn + ", detailPlanOfferFr=" + detailPlanOfferFr +", detailPlanOfferEn=" + detailPlanOfferEn + "]";
 	}
 
 	public Offer() {
