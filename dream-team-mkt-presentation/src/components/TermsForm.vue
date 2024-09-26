@@ -44,14 +44,14 @@ async function saveChange() {
         <label for="floatingTextarea2">Comments</label>
       </div>
 
-      <div class="form-floating"> <!--<span> {{termsForm}} </span>-->
+      <div v-if="props.isEditable" class="form-floating"> <!--<span> {{termsForm}} </span>-->
         <textarea v-model="termsForm" class="form-control" placeholder="Leave a comment here" 
         id="floatingTextarea2" style="height: 350px; width: 1000px;"></textarea>
 
         <label for="floatingTextarea2">Comments</label>
       </div>
 
-            <div class="text-end">
+      <div class="text-end">
         <div v-if="props.isEditable && isInEdition" @click="saveChange" class="btn btn-primary mb-3">SAVE</div>
       </div>
 
@@ -60,4 +60,3 @@ async function saveChange() {
   </section>
   
 </template>../services/termsFormService.js
-  
