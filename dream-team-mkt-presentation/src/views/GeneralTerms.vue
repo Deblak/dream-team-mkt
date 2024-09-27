@@ -1,5 +1,5 @@
 <script setup>
-import Header from '../components/Header.vue';
+import HeaderComponant from '../components/HeaderComponent.vue';
 import LinkEditGeneralTerms from '../components/LinkEditGeneralTerms.vue';
 import TermsForm from '../components/TermsForm.vue';
 </script>

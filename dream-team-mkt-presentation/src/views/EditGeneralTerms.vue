@@ -1,11 +1,11 @@
 <script setup>
-import Header from '../components/Header.vue';
+import HeaderComponant from '../components/HeaderComponent.vue';
 import TermsForm from '../components/TermsForm.vue';
 </script>
 
 <template>
     <main>
-      <Header/>
+      <HeaderComponant/>
       <h1>Genral terms and conditions</h1>
       <h1>Genral terms and conditions</h1>
       <h1>Genral terms and conditions</h1>
