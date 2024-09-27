@@ -1,5 +1,4 @@
 <script setupt></script>
-
 <template>
   <footer class="text-center bg-primary">
     <ul class="d-lg-flex justify-content-center p-0">
