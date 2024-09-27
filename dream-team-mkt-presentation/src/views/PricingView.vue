@@ -1,18 +1,18 @@
 <script setup>
 import {onMounted, ref} from 'vue';
 import PricingsProduct from '@/components/PricingsProduct.vue';
-import HeaderComponent from '@/components/HeaderComponent.vue';
-import PricingDetailsComponent from '@/components/PricingDetailsComponent.vue';
+import Header from '@/components/Header.vue';
+import PricingDetails from '@/components/PricingDetails.vue';
 
-const toColumnsDetails = ref(null);
+const refToDetailsPricingList = ref(null);
 
-const scrollToComponantDetail = () => {
-    if(toColumnsDetails.value){
-        toColumnsDetails.value.$refs.componentElement.scrollIntoView({ behavior: 'smooth' });
+const scrollToComponentDetail = () => {
+    if(refToDetailsPricingList.value){
+        refToDetailsPricingList.value.$refs.scrollRefComponent.scrollIntoView({ behavior: 'smooth' });
     }
     }
     onMounted(() => {
-    console.log("this is" + toColumnsDetails.value); // Vérifiez que l'élément est correctement référencé
+    console.log("this is" + refToDetailsPricingList.value); // Vérifiez que l'élément est correctement référencé
 });
 </script>
 
@@ -20,18 +20,18 @@ const scrollToComponantDetail = () => {
 <template>
     <main>
         <div class="container p-5">
-            <HeaderComponent/>
+            <Header/>
         </div>
         <h1>{{ $t('pricingPage')}}</h1>
         <PricingsProduct :isEditable=false />
         <div class="text-center p-3">
-            <button class="button" id="go-to-bottom" @click="scrollToComponantDetail"> {{$t('viewMore')}}</button>
+            <button class="button" id="go-to-bottom" @click="scrollToComponentDetail"> {{$t('viewMore')}}</button>
         </div>
         <PricingsProduct :isEditable=false />
         <PricingsProduct :isEditable=false />
         <PricingsProduct :isEditable=false />
         <PricingsProduct :isEditable=false />
-            <PricingDetailsComponent :isEditable=true ref="toColumnsDetails" />
+            <PricingDetails :isEditable=true ref="refToDetailsPricingList" />
     </main>
 </template>
 

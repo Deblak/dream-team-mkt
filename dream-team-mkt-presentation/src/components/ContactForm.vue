@@ -1,8 +1,8 @@
 <script setup>
 import { ref } from 'vue';
-import ContactFormService from "../services/contactFormService.js"
+import ContactForm from "../services/contactForm.js"
 
-const inputFormDataIsValid = ref({
+const isValidInputFormData = ref({
   corporateName: true,
   firstName: true,
   lastName: true,
@@ -19,31 +19,31 @@ const inputFormData = ref({
   message: ""
 })
 
-function inputIsValid(inputs) {
+function isValidInput(inputs) {
   let isValid = true;
-  inputFormDataIsValid.value.corporateName = true;
-  inputFormDataIsValid.value.firstName = true;
-  inputFormDataIsValid.value.lastName = true;
-  inputFormDataIsValid.value.emailPhoneNumber = true;
-  inputFormDataIsValid.value.message = true;
+  isValidInputFormData.value.corporateName = true;
+  isValidInputFormData.value.firstName = true;
+  isValidInputFormData.value.lastName = true;
+  isValidInputFormData.value.emailPhoneNumber = true;
+  isValidInputFormData.value.message = true;
   if (inputs.value.corporateName === '' || inputs.value.corporateName.trim().length > 200) {
-    inputFormDataIsValid.value.corporateName = false;
+    isValidInputFormData.value.corporateName = false;
     isValid = false;
   }
   if (inputs.value.firstName === '' || inputs.value.firstName.trim().length > 200) {
-    inputFormDataIsValid.value.firstName = false;
+    isValidInputFormData.value.firstName = false;
     isValid = false;
   }
   if (inputs.value.lastName === '' || inputs.value.lastName.trim().length > 200) {
-    inputFormDataIsValid.value.lastName = false;
+    isValidInputFormData.value.lastName = false;
     isValid = false;
   }
   if (inputs.value.email === '' && inputs.value.phoneNumber === '') {
-    inputFormDataIsValid.value.emailPhoneNumber = false;
+    isValidInputFormData.value.emailPhoneNumber = false;
     isValid = false;
   }
   if (inputs.value.message === '' || inputs.value.message.trim().length > 2000) {
-    inputFormDataIsValid.value.message = false;
+    isValidInputFormData.value.message = false;
     isValid = false;
   }
   return isValid;
@@ -51,8 +51,8 @@ function inputIsValid(inputs) {
 
 function submitData() {
   event.preventDefault()
-  if (inputIsValid(inputFormData)) {
-    ContactFormService.sendContactFormData(inputFormData);
+  if (isValidInput(inputFormData)) {
+    ContactForm.sendContactFormData(inputFormData);
     inputFormData.value = {
       corporateName: "",
       firstName: "",
@@ -76,9 +76,9 @@ function submitData() {
               {{ $t('corporateName')}}<span class="text-danger"><span class="text-danger">*</span></span>
             </label>
             <input v-model="inputFormData.corporateName" type="text" class="form-control"
-              v-bind:class="{ borderIsRed: !inputFormDataIsValid.corporateName }" id="corporateName"
+              v-bind:class="{ borderIsRed: !isValidInputFormData.corporateName }" id="corporateName"
               v-bind:placeholder="$t('200MaxChar')" required>
-            <span v-if="!inputFormDataIsValid.corporateName" class="feedback fst-italic text-danger">
+            <span v-if="!isValidInputFormData.corporateName" class="feedback fst-italic text-danger">
               {{ $t('corporateNameValidation')}}
             </span>
           </div>
@@ -90,9 +90,9 @@ function submitData() {
                 {{ $t('firstName')}}<span class="text-danger">*</span>
               </label>
               <input v-model="inputFormData.firstName" type="text" class="form-control"
-                v-bind:class="{ borderIsRed: !inputFormDataIsValid.firstName }" id="firstName"
+                v-bind:class="{ borderIsRed: !isValidInputFormData.firstName }" id="firstName"
                 v-bind:placeholder="$t('200MaxChar')" required>
-              <span v-if="!inputFormDataIsValid.firstName" class="feedback fst-italic text-danger">
+              <span v-if="!isValidInputFormData.firstName" class="feedback fst-italic text-danger">
                 {{ $t('firstNameValidation')}}
               </span>
             </div>
@@ -101,9 +101,9 @@ function submitData() {
             <div class="field mx-3">
               <label for="lastName" class="form-label fs-5">{{ $t('lastName')}}<span class="text-danger">*</span></label>
               <input v-model="inputFormData.lastName" type="text" class="form-control"
-                v-bind:class="{ borderIsRed: !inputFormDataIsValid.lastName }" id="lastName"
+                v-bind:class="{ borderIsRed: !isValidInputFormData.lastName }" id="lastName"
                 v-bind:placeholder="$t('200MaxChar')" required>
-              <span v-if="!inputFormDataIsValid.lastName" class="feedback fst-italic text-danger">
+              <span v-if="!isValidInputFormData.lastName" class="feedback fst-italic text-danger">
                 {{ $t('lastNameValidation')}}
               </span>
             </div>
@@ -116,9 +116,9 @@ function submitData() {
                 {{ $t('email')}}<span class="text-danger">*</span>
               </label>
               <input v-model="inputFormData.email" type="email" class="form-control"
-                v-bind:class="{ borderIsRed: !inputFormDataIsValid.emailPhoneNumber }" id="email"
+                v-bind:class="{ borderIsRed: !isValidInputFormData.emailPhoneNumber }" id="email"
                 v-bind:placeholder="$t('emailAndPhoneValidation')">
-              <span v-if="!inputFormDataIsValid.emailPhoneNumber" class="feedback fst-italic text-danger">
+              <span v-if="!isValidInputFormData.emailPhoneNumber" class="feedback fst-italic text-danger">
                 {{ $t('emailAndPhoneValidation')}}
               </span>
             </div>
@@ -129,9 +129,9 @@ function submitData() {
                 {{ $t('phone')}}<span class="text-danger">*</span>
               </label>
               <input v-model="inputFormData.phoneNumber" type="tel" class="form-control"
-                v-bind:class="{ borderIsRed: !inputFormDataIsValid.emailPhoneNumber }" id="phoneNumber"
+                v-bind:class="{ borderIsRed: !isValidInputFormData.emailPhoneNumber }" id="phoneNumber"
                 v-bind:placeholder="$t('emailAndPhoneValidation')">
-              <span v-if="!inputFormDataIsValid.emailPhoneNumber" class="feedback fst-italic text-danger">
+              <span v-if="!isValidInputFormData.emailPhoneNumber" class="feedback fst-italic text-danger">
                 {{ $t('emailAndPhoneValidation')}}
               </span>
             </div>
@@ -143,8 +143,8 @@ function submitData() {
               {{ $t('message')}}<span class="text-danger">*</span>
             </label>
             <textarea v-model="inputFormData.message" class="form-control" id="message"
-              v-bind:class="{ borderIsRed: !inputFormDataIsValid.message }" rows="3" required v-bind:placeholder="$t('200MaxChar')"></textarea>
-            <span v-if="!inputFormDataIsValid.message" class="feedback fst-italic text-danger">
+              v-bind:class="{ borderIsRed: !isValidInputFormData.message }" rows="3" required v-bind:placeholder="$t('200MaxChar')"></textarea>
+            <span v-if="!isValidInputFormData.message" class="feedback fst-italic text-danger">
               {{ $t('messageValidation')}}
             </span>
           </div>

@@ -1,6 +1,6 @@
 import axiosClient from "./axiosClient";
 
-class IdentityProductService {
+class IdentityProduct {
 
   static async fetchData() {
     let data = {};
@@ -20,4 +20,4 @@ class IdentityProductService {
   }
 }
 
-export default IdentityProductService;
+export default IdentityProduct;

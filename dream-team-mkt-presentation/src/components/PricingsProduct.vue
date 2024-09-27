@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-import PricingProductService from '../services/pricingProductService.js';
+import PricingsProduct from '../services/pricingsProduct.js';
 
 const props = defineProps({
   isEditable: Boolean
@@ -11,7 +11,7 @@ const isInEdition = ref(false);
 const language = navigator.language;
 
 onMounted( async () => {
-  datas.value = await PricingProductService.fetchData();
+  datas.value = await PricingsProduct.fetchData();
 })
 
 function toggleEdition() {
@@ -19,8 +19,8 @@ function toggleEdition() {
 }
 
 async function saveChange() {
-  await PricingProductService.updateData(datas.value);
-  datas.value = await PricingProductService.fetchData();
+  await PricingsProduct.updateData(datas.value);
+  datas.value = await PricingsProduct.fetchData();
   isInEdition.value = false;
 }
 
@@ -41,10 +41,10 @@ function splitPlanOffer(params) {
       </div>
       <div v-if="language ==='fr-FR'" class="row row-cols-lg-3 bg-info-subtle">
         <div v-for="data in datas" :key="data" class="p-2 text-center">
-          <h3 class="h3">{{data.nameOfferFr}}</h3>
-          <h4 class="h3">{{data.priceOfferFr}}</h4>
+          <h3 class="h3">{{data.nameFr}}</h3>
+          <h4 class="h3">{{data.priceFr}}</h4>
           <ul  class="list-unstyled">
-              <li v-for="value in splitPlanOffer(data.planOfferFr)" :key="value" >
+              <li v-for="value in splitPlanOffer(data.planFr)" :key="value" >
                 &bull;&#160;{{ value }}
               </li>
           </ul>
@@ -52,10 +52,10 @@ function splitPlanOffer(params) {
       </div>
       <div v-else class="row row-cols-lg-3 bg-info-subtle">
         <div v-for="data in datas" :key="data" class="p-2 text-center">
-          <h3 class="h3">{{data.nameOfferEn}}</h3>
-          <h4 class="h3">{{data.priceOfferEn}}</h4>
+          <h3 class="h3">{{data.nameEn}}</h3>
+          <h4 class="h3">{{data.priceEn}}</h4>
           <ul  class="list-unstyled">
-              <li v-for="value in splitPlanOffer(data.planOfferEn)" :key="value" >
+              <li v-for="value in splitPlanOffer(data.planEn)" :key="value" >
                 &bull;&#160;{{ value }}
               </li>
           </ul>
@@ -64,17 +64,17 @@ function splitPlanOffer(params) {
       <label v-if="props.isEditable && isInEdition">{{$t('english')}}</label>
     <div v-if="isInEdition" class="row row-cols-lg-3 bg-info-subtle">
       <div v-for="data in datas" :key="data" class="p-2 text-center">
-        <input class="h3" v-model="data.nameOfferEn" type="text" />
-        <input class="h3" v-model="data.priceOfferEn" type="text" />
-        <textarea type="text" v-model="data.planOfferEn"></textarea>
+        <input class="h3" v-model="data.nameEn" type="text" />
+        <input class="h3" v-model="data.priceEn" type="text" />
+        <textarea type="text" v-model="data.planEn"></textarea>
       </div>
     </div>
     <label v-if="props.isEditable && isInEdition">{{$t('french')}}</label>
     <div v-if="isInEdition" class="row row-cols-lg-3 bg-info-subtle">
       <div v-for="data in datas" :key="data" class="p-2 text-center">
-        <input class="h3" v-model="data.nameOfferFr" type="text" />
-        <input class="h3" v-model="data.priceOfferFr" type="text" />
-        <textarea type="text" v-model="data.planOfferFr" ></textarea>
+        <input class="h3" v-model="data.nameFr" type="text" />
+        <input class="h3" v-model="data.priceFr" type="text" />
+        <textarea type="text" v-model="data.planFr" ></textarea>
       </div>
     </div>
     <div v-if="props.isEditable && isInEdition" @click="saveChange" class="btn btn-primary">{{$t('save')}}</div>

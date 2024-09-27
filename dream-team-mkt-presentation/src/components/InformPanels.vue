@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted, ref } from 'vue';
-import PanelComponentService from '../services/panelComponentService.js'
+import InformPanels from '../services/informPanels.js'
 
 const props = defineProps({
   isEditable: Boolean
@@ -11,7 +11,7 @@ const isInEdition = ref(false);
 const language = navigator.language;
 
 onMounted(async () => {
-  data.value = await PanelComponentService.fetchData();
+  data.value = await InformPanels.fetchData();
 })
 
 function toggleEdition() {
@@ -20,7 +20,7 @@ function toggleEdition() {
 }
 
 async function saveChange() {
-  data.value = await PanelComponentService.updateData(data.value);
+  data.value = await InformPanels.updateData(data.value);
   isInEdition.value = false;
 }
 </script>
@@ -80,4 +80,4 @@ async function saveChange() {
     </div>
 
   </section>
-</template>../services/panelComponentService.js
+</template>../services/informPanels.js

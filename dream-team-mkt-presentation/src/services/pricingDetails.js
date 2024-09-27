@@ -1,6 +1,6 @@
 import axiosClient from "./axiosClient";
 
-class PricingComponentProductService {
+class PricingDetails {
 
     static async fetchData() {
         let datas ={}
@@ -18,4 +18,4 @@ class PricingComponentProductService {
     }
 
 }
-export default PricingComponentProductService
+export default PricingDetails

@@ -1,7 +1,7 @@
 
 import { axiosClient } from "./axiosClient"
 
-class ContactFormService {
+class ContactForm {
 
   static sendContactFormData(inputs) {
     const data = {
@@ -18,4 +18,4 @@ class ContactFormService {
   }
 }
 
-export default ContactFormService;
+export default ContactForm;

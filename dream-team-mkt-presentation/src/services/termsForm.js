@@ -1,6 +1,6 @@
 import axiosClient from "./axiosClient";
 
-class PanelComponentService {
+class TermsForm {
 
   static async fetchData() {
     let data = {}
@@ -20,4 +20,4 @@ class PanelComponentService {
 
 }
 
-export default PanelComponentService;
+export default TermsForm;

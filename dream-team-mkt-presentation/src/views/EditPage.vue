@@ -1,20 +1,20 @@
 <script setup>
-import HeaderComponet from '@/components/HeaderComponent.vue';
+import Header from '@/components/Header.vue';
 import IdentityProduct from '@/components/IdentityProduct.vue';
-import PanelComponent from '@/components/PanelComponent.vue'
+import InformPanels from '@/components/InformPanels.vue'
 import PricingsProduct from '@/components/PricingsProduct.vue';
 
 </script>
 <template>
   <main>
     <div class="container p-5">
-      <HeaderComponet/>
+      <Header/>
     </div>
     <h1>{{ $t('editPage')}}</h1>
     <div>
       <IdentityProduct :isEditable=true />
     </div>
-    <PanelComponent :isEditable=true />
+    <InformPanels :isEditable=true />
     <PricingsProduct :isEditable=true />
   </main>
 </template>

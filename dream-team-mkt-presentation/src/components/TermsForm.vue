@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted, ref } from 'vue';
-import TermsFormService from '../services/termsFormService';
+import TermsForm from '../services/termsForm.js';
 
 const termsForm = ref("");
 
@@ -12,7 +12,7 @@ const data = ref({});
 const isInEdition = ref(false);
 
 onMounted(async () => {
-  data.value = await TermsFormService.fetchData();
+  data.value = await TermsForm.fetchData();
 })
 
 function toggleEdition() {
@@ -21,7 +21,7 @@ function toggleEdition() {
 }
 
 async function saveChange() {
-  data.value = await TermsFormService.updateData(data.value);
+  data.value = await TermsForm.updateData(data.value);
   isInEdition.value = false;
 }
 
@@ -59,4 +59,4 @@ async function saveChange() {
 
   </section>
   
-</template>../services/termsFormService.js
+</template>../services/termsForm.js

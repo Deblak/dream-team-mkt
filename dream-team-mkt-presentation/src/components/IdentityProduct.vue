@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-import IdentityProductService from '@/services/identityProductService';
+import IdentityProduct from '@/services/identityProduct.js';
 
 const props = defineProps({
     isEditable: Boolean
@@ -15,12 +15,12 @@ const editIdProduct = () => {
 }
 
 async function submitData() {
-  dreamTeamId.value = await IdentityProductService.updateData(dreamTeamId.value);
+  dreamTeamId.value = await IdentityProduct.updateData(dreamTeamId.value);
   editDreamTeam.value = false;
 }
 
 onMounted( async() => {
-  dreamTeamId.value = await IdentityProductService.fetchData();
+  dreamTeamId.value = await IdentityProduct.fetchData();
 })
 
 </script>
