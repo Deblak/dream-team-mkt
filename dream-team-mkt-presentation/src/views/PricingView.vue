@@ -1,14 +1,19 @@
 <script setup>
+import {onMounted, ref} from 'vue';
 import PricingsProduct from '@/components/PricingsProduct.vue';
 import HeaderComponent from '@/components/HeaderComponent.vue';
 import PricingDetailsComponent from '@/components/PricingDetailsComponent.vue';
 
-// const goToBottom = document.getElementById("go-to-bottom");
-// const goToTop = document.getElementById("go-to-top");
+const toColumnsDetails = ref(null);
 
-// goToBottom.addEventListener("click", () => {
-//   goToTop.scrollIntoView({ behavior: "instant", block: "end" });
-// });
+const scrollToComponantDetail = () => {
+    if(toColumnsDetails.value){
+        toColumnsDetails.value.$refs.componentElement.scrollIntoView({ behavior: 'smooth' });
+    }
+    }
+    onMounted(() => {
+    console.log("this is" + toColumnsDetails.value); // Vérifiez que l'élément est correctement référencé
+});
 </script>
 
 
@@ -20,14 +25,13 @@ import PricingDetailsComponent from '@/components/PricingDetailsComponent.vue';
         <h1>{{ $t('pricingPage')}}</h1>
         <PricingsProduct :isEditable=false />
         <div class="text-center p-3">
-            <button class="button" id="go-to-bottom"> {{$t('viewMore')}}</button>
+            <button class="button" id="go-to-bottom" @click="scrollToComponantDetail"> {{$t('viewMore')}}</button>
         </div>
         <PricingsProduct :isEditable=false />
         <PricingsProduct :isEditable=false />
         <PricingsProduct :isEditable=false />
         <PricingsProduct :isEditable=false />
-
-        <PricingDetailsComponent id="go-to-top"/>
+            <PricingDetailsComponent :isEditable=true ref="toColumnsDetails" />
     </main>
 </template>
 
