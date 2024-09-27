@@ -1,4 +1,4 @@
-package co.simplon.dream_team_mkt_business.services.implementation;
+package co.simplon.dream_team_mkt_business.services.implementations;
 
 import org.springframework.stereotype.Service;
 
@@ -22,7 +22,7 @@ public class DreamTeamIdServiceImpl implements DreamTeamIdService {
 
 	@Override
 	public DreamTeamIdDto updateData(DreamTeamIdDto dreamTeamIdDto) {
-		return DreamTeamIdMapper.entityToDto(repository.saveAndFlush(DreamTeamIdMapper.updateEntityWithInputs(dreamTeamIdDto, repository.findAll().getLast())));
+		return DreamTeamIdMapper.entityToDto(repository.saveAndFlush(DreamTeamIdMapper.updateEntityWithDto(dreamTeamIdDto, repository.findAll().getLast())));
 	}
 
 }

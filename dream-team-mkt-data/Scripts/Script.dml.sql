@@ -12,7 +12,7 @@ INSERT INTO t_dream_team_identity (picture_fr, picture_en ,slogan_fr,slogan_en, 
 '2 Lorem ipsum dolor english'
 );
 
-INSERT INTO t_offers (name_offer_fr,name_offer_en,price_offer_fr,price_offer_en,plan_offer_fr,plan_offer_en,call_to_action_fr,call_to_action_en) VALUES
+INSERT INTO t_offers (name_fr,name_en,price_fr,price_en,plan_fr,plan_en,call_to_action_fr,call_to_action_en) VALUES
 ('Petit','Small','19,99 €/mois','19,99 €/month','1 to 99 développeurs,20 projets,profile basique,recherche basique','1 to 99 developers,20 projects,basic profile,classic search','',''),
 ('Moyen','Medium','49,99 €/mois','49,99 €/month','100 to 499 développeurs,50 projets,profile avancer,recherche avancer','100 to 499 developers,50 projects,advanced profile,advanced search','',''),
 ('Grand','Large','79,99 €/mois','79,99 €/month','499 to 1000 développeurs,100 projets,profile avancer,recherche avancer,dev2project super matching',

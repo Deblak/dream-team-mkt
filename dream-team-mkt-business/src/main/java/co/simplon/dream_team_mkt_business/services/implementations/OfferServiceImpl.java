@@ -1,4 +1,4 @@
-package co.simplon.dream_team_mkt_business.services.implementation;
+package co.simplon.dream_team_mkt_business.services.implementations;
 
 import java.util.List;
 
@@ -19,13 +19,13 @@ public class OfferServiceImpl implements OfferService {
 
 	@Override
 	public List<OfferDto> getAll() {
-		return OfferMapper.offersToOfferDtos(
-				repository.findAll().stream().sorted((o1, o2) -> Long.valueOf(o1.getIdOffer()).intValue() - Long.valueOf(o2.getIdOffer()).intValue()).toList());
+		return OfferMapper.entitiesToDtos(
+				repository.findAll().stream().sorted((o1, o2) -> Long.valueOf(o1.getId()).intValue() - Long.valueOf(o2.getId()).intValue()).toList());
 	}
 
 	@Override
 	public void updateData(List<OfferDto> inputs) {
 		repository.deleteAll();
-		repository.saveAll(OfferMapper.offerDtosToOffers(inputs));
+		repository.saveAll(OfferMapper.dtosToEntities(inputs));
 	}
 }

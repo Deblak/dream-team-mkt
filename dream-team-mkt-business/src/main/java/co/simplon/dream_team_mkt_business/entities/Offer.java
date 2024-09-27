@@ -10,130 +10,131 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "t_offers")
 public class Offer {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_offer")
-	private Long idOffer;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
 
-	@Column(name = "name_offer_fr")
-	private String nameOfferFr;
-	@Column(name = "name_offer_en")
-	private String nameOfferEn;
+    @Column(name = "name_fr")
+    private String nameFr;
+    @Column(name = "name_en")
+    private String nameEn;
 
-	@Column(name = "price_offer_fr")
-	private String priceOfferFr;
-	@Column(name = "price_offer_en")
-	private String priceOfferEn;
-	@Column(name = "plan_offer_fr")
-	private String planOfferFr;
-	@Column(name = "plan_offer_en")
-	private String planOfferEn;
-	@Column(name = "call_to_action_fr")
-	private String callToActionFr;
-	@Column(name = "call_to_action_en")
-	private String callToActionEn;
-	@Column(name="detail_plan_offer_fr")
-	private String detailPlanOfferFr;
-	@Column(name="detail_plan_offer_en")
-	private String detailPlanOfferEn;
+    @Column(name = "price_fr")
+    private String priceFr;
+    @Column(name = "price_en")
+    private String priceEn;
+    @Column(name = "plan_fr")
+    private String planFr;
+    @Column(name = "plan_en")
+    private String planEn;
+    @Column(name = "call_to_action_fr")
+    private String callToActionFr;
+    @Column(name = "call_to_action_en")
+    private String callToActionEn;
+    @Column(name = "detail_plan_fr")
+    private String detailPlanFr;
+    @Column(name = "detail_plan_en")
+    private String detailPlanEn;
 
-	public Long getIdOffer() {
-		return idOffer;
-	}
+    @Override
+    public String toString() {
+	return "Offer [id=" + id + ", nameFr=" + nameFr + ", nameEn=" + nameEn + ", priceFr=" + priceFr + ", priceEn="
+		+ priceEn + ", planFr=" + planFr + ", planEn=" + planEn + ", callToActionFr=" + callToActionFr
+		+ ", callToActionEn=" + callToActionEn + ", detailPlanFr=" + detailPlanFr + ", detailPlanEn="
+		+ detailPlanEn + "]";
+    }
 
-	public void setIdOffer(Long idOffer) {
-		this.idOffer = idOffer;
-	}
+    public Long getId() {
+	return id;
+    }
 
-	public String getNameOfferFr() {
-		return nameOfferFr;
-	}
+    public void setId(Long id) {
+	this.id = id;
+    }
 
-	public void setNameOfferFr(String nameOfferFr) {
-		this.nameOfferFr = nameOfferFr;
-	}
+    public String getNameFr() {
+	return nameFr;
+    }
 
-	public String getNameOfferEn() {
-		return nameOfferEn;
-	}
+    public void setNameFr(String nameFr) {
+	this.nameFr = nameFr;
+    }
 
-	public void setNameOfferEn(String nameOfferEn) {
-		this.nameOfferEn = nameOfferEn;
-	}
+    public String getNameEn() {
+	return nameEn;
+    }
 
-	public String getPriceOfferFr() {
-		return priceOfferFr;
-	}
+    public void setNameEn(String nameEn) {
+	this.nameEn = nameEn;
+    }
 
-	public void setPriceOfferFr(String priceOfferFr) {
-		this.priceOfferFr = priceOfferFr;
-	}
+    public String getPriceFr() {
+	return priceFr;
+    }
 
-	public String getPriceOfferEn() {
-		return priceOfferEn;
-	}
+    public void setPriceFr(String priceFr) {
+	this.priceFr = priceFr;
+    }
 
-	public void setPriceOfferEn(String priceOfferEn) {
-		this.priceOfferEn = priceOfferEn;
-	}
+    public String getPriceEn() {
+	return priceEn;
+    }
 
-	public String getPlanOfferFr() {
-		return planOfferFr;
-	}
+    public void setPriceEn(String priceEn) {
+	this.priceEn = priceEn;
+    }
 
-	public void setPlanOfferFr(String planOfferFr) {
-		this.planOfferFr = planOfferFr;
-	}
+    public String getPlanFr() {
+	return planFr;
+    }
 
-	public String getPlanOfferEn() {
-		return planOfferEn;
-	}
+    public void setPlanFr(String planFr) {
+	this.planFr = planFr;
+    }
 
-	public void setPlanOfferEn(String planOfferEn) {
-		this.planOfferEn = planOfferEn;
-	}
+    public String getPlanEn() {
+	return planEn;
+    }
 
-	public String getCallToActionFr() {
-		return callToActionFr;
-	}
+    public void setPlanEn(String planEn) {
+	this.planEn = planEn;
+    }
 
-	public void setCallToActionFr(String callToActionFr) {
-		this.callToActionFr = callToActionFr;
-	}
+    public String getCallToActionFr() {
+	return callToActionFr;
+    }
 
-	public String getCallToActionEn() {
-		return callToActionEn;
-	}
+    public void setCallToActionFr(String callToActionFr) {
+	this.callToActionFr = callToActionFr;
+    }
 
-	public void setCallToActionEn(String callToActionEn) {
-		this.callToActionEn = callToActionEn;
-	}
+    public String getCallToActionEn() {
+	return callToActionEn;
+    }
 
-	public String getDetailPlanOfferFr() {
-		return detailPlanOfferFr;
-	}
+    public void setCallToActionEn(String callToActionEn) {
+	this.callToActionEn = callToActionEn;
+    }
 
-	public void setDetailPlanOfferFr(String detailPlanOfferFr) {
-		this.detailPlanOfferFr = detailPlanOfferFr;
-	}
+    public String getDetailPlanFr() {
+	return detailPlanFr;
+    }
 
-	public String getDetailPlanOfferEn() {
-		return detailPlanOfferEn;
-	}
+    public void setDetailPlanFr(String detailPlanFr) {
+	this.detailPlanFr = detailPlanFr;
+    }
 
-	public void setDetailPlanOfferEn(String detailPlanOfferEn) {
-		this.detailPlanOfferEn = detailPlanOfferEn;
-	}
+    public String getDetailPlanEn() {
+	return detailPlanEn;
+    }
 
-	@Override
-	public String toString() {
-		return "Offer [idOffer=" + idOffer + ", nameOfferFr=" + nameOfferFr + ", nameOfferEn=" + nameOfferEn + ", priceOfferFr=" + priceOfferFr
-				+ ", priceOfferEn=" + priceOfferEn + ", planOfferFr=" + planOfferFr + ", planOfferEn=" + planOfferEn + ", callToActionFr=" + callToActionFr
-				+ ", callToActionEn=" + callToActionEn + ", detailPlanOfferFr=" + detailPlanOfferFr +", detailPlanOfferEn=" + detailPlanOfferEn + "]";
-	}
+    public void setDetailPlanEn(String detailPlanEn) {
+	this.detailPlanEn = detailPlanEn;
+    }
 
-	public Offer() {
-		// Default ORM
-	}
+    public Offer() {
+	// Default ORM
+    }
 
 }

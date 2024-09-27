@@ -12,34 +12,34 @@ import jakarta.persistence.Table;
 public class Terms {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_terms")
-    private Long idTerms;
-    
+    @Column(name = "id")
+    private Long id;
+
     @Column(name = "terms")
-	private String terms;
+    private String terms;
 
-	public Long getIdTerms() {
-		return idTerms;
-	}
+    @Override
+    public String toString() {
+	return "Terms [id=" + id + ", terms=" + terms + "]";
+    }
 
-	public void setIdTerms(Long idTerms) {
-		this.idTerms = idTerms;
-	}
+    public Long getId() {
+	return id;
+    }
 
-	public String getTerms() {
-		return terms;
-	}
+    public void setId(Long id) {
+	this.id = id;
+    }
 
-	public void setTerms(String terms) {
-		this.terms = terms;
-	}
-	
-	@Override
-	public String toString() {
-		return "Terms [idTerms=" + idTerms + ", terms=" + terms + "]";
-	}
+    public String getTerms() {
+	return terms;
+    }
 
-	public Terms() {
-		// Default ORM
-	}
+    public void setTerms(String terms) {
+	this.terms = terms;
+    }
+
+    public Terms() {
+	// Default ORM
+    }
 }

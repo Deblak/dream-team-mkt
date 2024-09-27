@@ -1,4 +1,4 @@
-package co.simplon.dream_team_mkt_business.services.implementation;
+package co.simplon.dream_team_mkt_business.services.implementations;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;

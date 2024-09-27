@@ -12,13 +12,13 @@ public class DreamTeamIdMapper {
 		return dreamTeamIdDto;
 	}
 
-	public static DreamTeamId updateEntityWithInputs(DreamTeamIdDto dreamTeamIdDto, DreamTeamId dreamTeamId) {
+	public static DreamTeamId updateEntityWithDto(DreamTeamIdDto dreamTeamIdDto, DreamTeamId dreamTeamId) {
 		dreamTeamId.setPanelOneDescEn(dreamTeamIdDto.panelOneDescEn());
 		dreamTeamId.setPanelOneDescFr(dreamTeamIdDto.panelOneDescFr());
 		dreamTeamId.setPanelTwoDescEn(dreamTeamIdDto.panelTwoDescEn());
 		dreamTeamId.setPanelTwoDescFr(dreamTeamIdDto.panelTwoDescFr());
-		dreamTeamId.setPictureFr(dreamTeamIdDto.picture_fr());
-		dreamTeamId.setPictureEn(dreamTeamIdDto.picture_en());
+		dreamTeamId.setPictureFr(dreamTeamIdDto.pictureFr());
+		dreamTeamId.setPictureEn(dreamTeamIdDto.pictureEn());
 		dreamTeamId.setSloganEn(dreamTeamIdDto.sloganEn());
 		dreamTeamId.setSloganFr(dreamTeamIdDto.sloganFr());
 		return dreamTeamId;
