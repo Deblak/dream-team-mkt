@@ -16,5 +16,12 @@
   "message": "Message",
   "messageValidation": "Max 2000 characters or can't be blank !",
   "send": "SEND",
-  "save": "SAVE"
+  "save": "SAVE",
+  "english": "English",
+  "french": "French",
+  "200MaxChar": "max 200 characters",
+  "exempleIdentityPicture": "example identity picture",
+  "uploadNewimage": "Upload a new image",
+  "pricingPage": "Pricing",
+  "viewMore":"View more"
 }

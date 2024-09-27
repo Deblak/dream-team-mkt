@@ -16,5 +16,12 @@
   "message": "Message",
   "messageValidation": "Le message ne peut pas être vide, 200 characters max !",
   "send": "Envoyé",
-  "save": "Sauvegarder"
+  "save": "Sauvegarder",
+  "english": "Anglais",
+  "french": "Français",
+  "200MaxChar": "max 200 characters",
+  "exempleIdentityPicture": "example d'image d'indentité",
+  "uploadNewimage": "charger une nouvelle image",
+  "pricingPage":"Abonnements prix",
+  "viewMore" : "En voir plus"
 }
