@@ -1,14 +1,13 @@
 <script setup>
-import HeaderComponant from '../components/HeaderComponent.vue';
+import Header from '../components/Header.vue';
 import TermsForm from '../components/TermsForm.vue';
 </script>
 
 <template>
     <main>
-      <HeaderComponant/>
-      <h1>Genral terms and conditions</h1>
-      <h1>Genral terms and conditions</h1>
-      <h1>Genral terms and conditions</h1>
+      <div class="container p-5">
+        <Header/>
+      </div>
       <h1>Genral terms and conditions</h1>
       <TermsForm :isEditable="true"/>
     </main>

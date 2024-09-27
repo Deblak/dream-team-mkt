@@ -1,15 +1,14 @@
 <script setup>
-import HeaderComponant from '../components/HeaderComponent.vue';
+import Header from '../components/Header.vue';
 import LinkEditGeneralTerms from '../components/LinkEditGeneralTerms.vue';
 import TermsForm from '../components/TermsForm.vue';
 </script>
 
 <template>
     <main>
-      <Header/>
-      <h1>Genral terms and conditions</h1>
-      <h1>Genral terms and conditions</h1>
-      <h1>Genral terms and conditions</h1>
+      <div class="container p-5">
+        <Header/>
+      </div>
       <h1>Genral terms and conditions</h1>
       <TermsForm :isEditable="false"/>
       <LinkEditGeneralTerms/>

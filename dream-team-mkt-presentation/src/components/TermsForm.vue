@@ -38,8 +38,8 @@ async function saveChange() {
     <div class="row row-cols-lg-1 mt-4">
       
       <div class="form-floating"> 
-        <textarea  class="form-control" placeholder="Leave a comment here" 
-        id="floatingTextarea2" style="min-height: 350px; width: 1000px;">{{termsForm}}</textarea>
+        <textarea  v-model="termsForm" ass="form-control" placeholder="Leave a comment here" 
+        id="floatingTextarea2" style="min-height: 350px; width: 1000px;"></textarea>
 
         <label for="floatingTextarea2">Comments</label>
       </div>
