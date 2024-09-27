@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS t_offers;
-DROP TABLE IF EXISTS t_dream_team_identity;
+DROP TABLE IF EXISTS t_dream_team_identities;
 DROP TABLE IF EXISTS t_terms;
 
 CREATE TABLE t_offers(
@@ -17,7 +17,7 @@ CREATE TABLE t_offers(
    CONSTRAINT t_offers_pkey PRIMARY KEY (id)
 );
 
-CREATE TABLE t_dream_team_identity(
+CREATE TABLE t_dream_team_identities(
 	id BIGINT GENERATED ALWAYS AS IDENTITY,
 	picture_fr VARCHAR(1000) NOT NULL,
 	picture_en VARCHAR(1000) NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE t_dream_team_identity(
 	panel_1_desc_en VARCHAR(2000) NOT NULL,
 	panel_2_desc_fr VARCHAR(2000) NOT NULL,
 	panel_2_desc_en VARCHAR(2000) NOT NULL,
-   CONSTRAINT t_dream_team_identity_pkey PRIMARY KEY (id)
+   CONSTRAINT t_dream_team_identities_pkey PRIMARY KEY (id)
 );
 
 

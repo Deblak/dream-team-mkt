@@ -5,7 +5,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
-import co.simplon.dreamteam.mkt.business.entities.ContactForm;
+import co.simplon.dreamteam.mkt.business.dtos.ContactFormDto;
 import co.simplon.dreamteam.mkt.business.services.MailService;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
@@ -23,7 +23,7 @@ public class MailServiceImpl implements MailService {
 	}
 
 	@Override
-	public void sendContactMail(ContactForm inputs) {
+	public void sendContactMail(ContactFormDto inputs) {
 		String mailBody = "Companie name: " + inputs.corporateName() + System.lineSeparator() + "Contact Name: " + inputs.firstName() + " " + inputs.lastName()
 				+ System.lineSeparator() + "Email: " + inputs.email() + " " + "Phone number: " + inputs.phoneNumber() + System.lineSeparator() + "Message: "
 				+ inputs.message();

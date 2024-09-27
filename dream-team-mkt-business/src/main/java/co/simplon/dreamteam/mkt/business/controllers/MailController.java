@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.simplon.dreamteam.mkt.business.entities.ContactForm;
+import co.simplon.dreamteam.mkt.business.dtos.ContactFormDto;
 import co.simplon.dreamteam.mkt.business.services.MailService;
 import jakarta.validation.Valid;
 
@@ -27,7 +27,7 @@ public class MailController {
 
 	@PostMapping("/send")
 	@ResponseStatus(code = HttpStatus.ACCEPTED)
-	public void sendContactMail(@RequestBody Map<String, @Valid ContactForm> inputs) {
+	public void sendContactMail(@RequestBody Map<String, co.simplon.dreamteam.mkt.business.dtos.ContactFormDto> inputs) {
 		service.sendContactMail(inputs.get("data"));
 	}
 }

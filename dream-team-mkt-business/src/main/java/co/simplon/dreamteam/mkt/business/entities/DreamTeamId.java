@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "t_dream_team_identity")
+@Table(name = "t_dream_team_identities")
 public class DreamTeamId {
 
     @Id

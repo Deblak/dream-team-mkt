@@ -1,8 +1,8 @@
 package co.simplon.dreamteam.mkt.business.services;
 
-import co.simplon.dreamteam.mkt.business.entities.ContactForm;
+import co.simplon.dreamteam.mkt.business.dtos.ContactFormDto;
 
 public interface MailService {
 
-	void sendContactMail(ContactForm inputs);
+	void sendContactMail(ContactFormDto inputs);
 }
