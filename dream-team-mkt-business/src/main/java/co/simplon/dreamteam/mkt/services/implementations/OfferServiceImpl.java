@@ -25,7 +25,6 @@ public class OfferServiceImpl implements OfferService {
 
 	@Override
 	public void updateData(List<OfferDto> inputs) {
-		repository.deleteAll();
-		repository.saveAll(OfferMapper.dtosToEntities(inputs));
+		repository.saveAll(OfferMapper.dtosToEntities(inputs, repository.findAll()));
 	}
 }
