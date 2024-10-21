@@ -4,14 +4,14 @@ DROP TABLE IF EXISTS t_terms;
 
 CREATE TABLE t_offers(
 	id BIGINT GENERATED ALWAYS AS IDENTITY,
-	name_fr VARCHAR(50) NOT NULL, --data
-	name_en VARCHAR(50) NOT NULL, --data
+	name_fr VARCHAR(50) NOT NULL,
+	name_en VARCHAR(50) NOT NULL,
 	price_fr VARCHAR(100) NOT NULL,
 	price_en VARCHAR(100) NOT NULL,
     plan_fr VARCHAR(1000) NOT NULL,
     plan_en VARCHAR(1000) NOT NULL,
-    call_to_action_fr VARCHAR(200) NOT NULL, --data
-    call_to_action_en VARCHAR(200) NOT NULL, --data
+    call_to_action_fr VARCHAR(200) NOT NULL,
+    call_to_action_en VARCHAR(200) NOT NULL,
     detail_plan_fr TEXT,
     detail_plan_en TEXT,
    CONSTRAINT t_offers_pkey PRIMARY KEY (id)

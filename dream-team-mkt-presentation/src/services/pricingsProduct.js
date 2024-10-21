@@ -11,7 +11,7 @@ class PricingsProduct {
   }
 
   static async updateData(data) {
-    await axiosClient.post('offers/update', data)
+    await axiosClient.patch('offers', data)
   }
 
 }

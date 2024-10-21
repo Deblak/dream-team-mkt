@@ -14,7 +14,7 @@ class PricingDetails {
              await axiosClient.patch('/pricing',data, {
                 headers: {'Content-Type': 'application/json'}
             });
-  
+
     }
 
 }
