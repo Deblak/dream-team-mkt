@@ -1,7 +1,6 @@
 package co.simplon.dreamteam.mkt.controllers;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,7 +13,6 @@ import co.simplon.dreamteam.mkt.services.DreamTeamIdService;
 
 @RestController
 @RequestMapping("/dreamteam")
-@CrossOrigin("*")
 public class DreamTeamIdController {
 	private final DreamTeamIdService service;
 

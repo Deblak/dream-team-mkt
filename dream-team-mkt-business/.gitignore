@@ -34,3 +34,4 @@ build/
 
 **/application.properties
 **/application-dev.properties
+**/application-local.properties
