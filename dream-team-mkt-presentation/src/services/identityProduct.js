@@ -13,7 +13,7 @@ class IdentityProduct {
 
   static async updateData(data) {
     let returnData = {}
-    returnData = await axiosClient.post("/dreamteam/updateData",
+    returnData = await axiosClient.patch("/dreamteam/updateData",
       data
     )
     return returnData.data;
