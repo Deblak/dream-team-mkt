@@ -3,7 +3,6 @@ package co.simplon.dreamteam.mkt.controllers;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,7 +15,6 @@ import co.simplon.dreamteam.mkt.services.OfferService;
 
 @RestController
 @RequestMapping("/offers")
-@CrossOrigin("*")
 public class OfferController {
 	private final OfferService service;
 
