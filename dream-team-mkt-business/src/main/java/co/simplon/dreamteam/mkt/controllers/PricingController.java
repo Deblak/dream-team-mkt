@@ -4,7 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import co.simplon.dreamteam.mkt.dtos.PricingDto;
-import co.simplon.dreamteam.mkt.services.implementations.PricingServiceImpl;
+import co.simplon.dreamteam.mkt.services.PricingService;
 
 import java.util.List;
 
@@ -12,9 +12,9 @@ import java.util.List;
 @CrossOrigin("*")
 @RequestMapping("/pricing")
 public class PricingController {
-   private final PricingServiceImpl service;
+   private final PricingService service;
 
-    public PricingController(PricingServiceImpl pricingService) {
+    public PricingController(PricingService pricingService) {
         this.service = pricingService;
     }
 

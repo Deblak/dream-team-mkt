@@ -3,7 +3,7 @@ package co.simplon.dreamteam.mkt.controllers;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -27,10 +27,9 @@ public class GeneralTermsController {
 		return service.get();
 	}
 
-	@PostMapping("/updateData")
+	@PatchMapping("/updateData")
 	@ResponseStatus(code = HttpStatus.OK)
-	public String postMethodName(@RequestBody String inputs) {
-		System.out.println(inputs);
+	public String update(@RequestBody String inputs) {
 		return service.updateData(inputs);
 	}
 }
