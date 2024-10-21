@@ -26,12 +26,17 @@ public class GeneralTermsServiceImpl implements GeneralTermsService {
 	
 	@Override
 	public String updateData(String terms) {
-		Terms newTerms = new Terms();
+/*		Terms newTerms = new Terms();
 		newTerms.setTerms(terms);
 		
 		repository.saveAndFlush(newTerms);
 		
-		return terms;
+		return terms;*/
+		Terms term = repository.findAll().getLast();
+		term.setTerms(terms);
+		repository.saveAndFlush(term);
+		
+		return term.getTerms();
 	}
 
 }

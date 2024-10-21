@@ -30,7 +30,6 @@ public class GeneralTermsController {
 	@PostMapping("/updateData")
 	@ResponseStatus(code = HttpStatus.OK)
 	public String postMethodName(@RequestBody String inputs) {
-		System.out.println(inputs);
 		return service.updateData(inputs);
 	}
 }
