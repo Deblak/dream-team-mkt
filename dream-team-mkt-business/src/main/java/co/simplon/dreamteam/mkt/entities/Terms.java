@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 public class Terms {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "id_terms")
     private Long id;
 
     @Column(name = "terms")
