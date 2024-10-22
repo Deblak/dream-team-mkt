@@ -21,3 +21,8 @@ INSERT INTO t_offers (name_fr,name_en,price_fr,price_en,plan_fr,plan_en,call_to_
 
 SELECT * FROM t_offers to2;
 SELECT * FROM t_dream_team_identities tdti;
+
+
+INSERT INTO t_terms (terms) values
+('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. 
+Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.')

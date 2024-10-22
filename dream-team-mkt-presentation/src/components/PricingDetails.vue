@@ -1,40 +1,73 @@
-<script setup>
-import {onMounted, ref} from 'vue';
+<script>
 import PricingDetails from '../services/pricingDetails.js';
 
-const scrollRefComponent = ref(null);
-const isInEdition = ref(false);
+export default {
 
-const props = defineProps({
-  isEditable: Boolean
-});
-
-const retrieveDatas = ref([]);
-onMounted( async () => {
-  retrieveDatas.value = await PricingDetails.fetchData();
-})
-
-function splitDetailPlanOffer(params) {
+  name: 'PriicingDetailView',
+  props: {
+    isEditable: Boolean
+  },
+  data(){
+    return {
+      scrollRefComponent: null,
+      isInEdition: false,
+      retrieveDatas: []
+    }
+  },
+  mounted() {
+    async () => {
+      this.retrieveDatas = await PricingDetails.fetchData();
+    }
+  },
+  methods: {
+   splitDetailPlanOffer(params) {
   return params.split(',')
+},
+toggleEdition() {
+  this.isInEdition = !this.isInEdition;
+},
+async saveChange() {
+    console.log('Données avant avant à jour:', this.retrieveDatas);
+  await PricingDetails.updateData(this.retrieveDatas);
+  console.log('Données avant mise à jour:', this.retrieveDatas);
+  this.retrieveDatas = await PricingDetails.fetchData();
+  this.isInEdition = false;
 }
+  }
+};
+// const scrollRefComponent = ref(null);
+// const isInEdition = ref(false);
 
-function toggleEdition() {
-  isInEdition.value = !isInEdition.value;
-}
-async function saveChange() {
-    console.log('Données avant avant à jour:', retrieveDatas.value);
-  await PricingDetails.updateData(retrieveDatas.value);
-  console.log('Données avant mise à jour:', retrieveDatas.value);
-  retrieveDatas.value = await PricingDetails.fetchData();
-  isInEdition.value = false;
-}
+// const props = defineProps({
+//   isEditable: Boolean
+// });
+
+// const retrieveDatas = ref([]);
+// onMounted( async () => {
+//   retrieveDatas.value = await PricingDetails.fetchData();
+// })
+
+// function splitDetailPlanOffer(params) {
+//   return params.split(',')
+// }
+
+// function toggleEdition() {
+//   isInEdition.value = !isInEdition.value;
+// }
+// async function saveChange() {
+//     console.log('Données avant avant à jour:', retrieveDatas.value);
+//   await PricingDetails.updateData(retrieveDatas.value);
+//   console.log('Données avant mise à jour:', retrieveDatas.value);
+//   retrieveDatas.value = await PricingDetails.fetchData();
+//   isInEdition.value = false;
+// }
 
 </script>
 
 
 <template>
     <section class="text-end" ref="scrollRefComponent" >
-    <button v-if="props.isEditable" class="me-5 btn btn-info mt-3" @click="toggleEdition">
+    <button v-if="isEditable" class="me-5 btn btn-info mt-3" @click="toggleEdition">
         <i class="h4 text-white bi bi-pencil-square"></i>
     </button>
     <div class="container">
@@ -52,19 +85,19 @@ async function saveChange() {
         </ul>
     </div>
     </div>
-    <label v-if="props.isEditable && isInEdition">English</label>
+    <label v-if="isEditable && isInEdition">English</label>
     <div v-if="isInEdition" class="row row-cols-lg-3 bg-info-subtle">
       <div v-for="data in retrieveDatas" :key="data" class="p-2 text-center">
         <textarea v-model="data.detailPlanEn" type="text"></textarea>
       </div>
     </div>
-    <label v-if="props.isEditable && isInEdition">Français</label>
+    <label v-if="isEditable && isInEdition">Français</label>
     <div v-if="isInEdition" class="row row-cols-lg-3 bg-info-subtle">
       <div v-for="data in retrieveDatas" :key="data" class="p-2 text-center">
         <textarea v-model="data.detailPlanFr" type="text"></textarea>
       </div>
     </div>
-    <div v-if="props.isEditable && isInEdition" @click="saveChange" class="btn btn-primary">save</div>
+    <div v-if="isEditable && isInEdition" @click="saveChange" class="btn btn-primary">save</div>
     </div>
 </section>
 

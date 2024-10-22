@@ -6,10 +6,7 @@ import TermsForm from '../components/TermsForm.vue';
 <template>
     <main>
       <Header/>
-      <h1>Genral terms and conditions</h1>
-      <h1>Genral terms and conditions</h1>
-      <h1>Genral terms and conditions</h1>
-      <h1>Genral terms and conditions</h1>
+      <h1 class="pt-5">Genral terms and conditions</h1>
       <TermsForm :isEditable="true"/>
     </main>
 </template>

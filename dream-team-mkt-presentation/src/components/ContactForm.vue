@@ -1,59 +1,69 @@
-<script setup>
-import { ref } from 'vue';
+<script>
 import ContactForm from "../services/contactForm.js"
 
-const isValidInputFormData = ref({
+export default{
+  name: 'ContanctForm',
+  props: {
+    isEditable: Boolean
+  },
+  data(){
+    return {
+      isValidInputFormData: { 
   corporateName: true,
   firstName: true,
   lastName: true,
   emailPhoneNumber: true,
   message: true
-})
+      },
 
-const inputFormData = ref({
+      inputFormData: {
   corporateName: "",
   firstName: "",
   lastName: "",
   email: "",
   phoneNumber: "",
   message: ""
-})
+    }
+  }
+},
 
-function isValidInput(inputs) {
+
+  methods: {
+    isValidInput(inputs) {
   let isValid = true;
-  isValidInputFormData.value.corporateName = true;
-  isValidInputFormData.value.firstName = true;
-  isValidInputFormData.value.lastName = true;
-  isValidInputFormData.value.emailPhoneNumber = true;
-  isValidInputFormData.value.message = true;
+  this.isValidInputFormData.corporateName = true;
+  this.isValidInputFormData.firstName = true;
+  this.isValidInputFormData.lastName = true;
+  this.isValidInputFormData.emailPhoneNumber = true;
+  this.isValidInputFormData.message = true;
   if (inputs.value.corporateName === '' || inputs.value.corporateName.trim().length > 200) {
-    isValidInputFormData.value.corporateName = false;
+    this.isValidInputFormData.corporateName = false;
     isValid = false;
   }
   if (inputs.value.firstName === '' || inputs.value.firstName.trim().length > 200) {
-    isValidInputFormData.value.firstName = false;
+    this.isValidInputFormData.firstName = false;
     isValid = false;
   }
   if (inputs.value.lastName === '' || inputs.value.lastName.trim().length > 200) {
-    isValidInputFormData.value.lastName = false;
+    this.isValidInputFormData.lastName = false;
     isValid = false;
   }
   if (inputs.value.email === '' && inputs.value.phoneNumber === '') {
-    isValidInputFormData.value.emailPhoneNumber = false;
+    this.isValidInputFormData.emailPhoneNumber = false;
     isValid = false;
   }
   if (inputs.value.message === '' || inputs.value.message.trim().length > 2000) {
-    isValidInputFormData.value.message = false;
+    this.isValidInputFormData.message = false;
     isValid = false;
   }
   return isValid;
-}
+    },
 
-function submitData() {
+    submitData() {
   event.preventDefault()
-  if (isValidInput(inputFormData)) {
-    ContactForm.sendContactFormData(inputFormData);
-    inputFormData.value = {
+  if (this.isValidInput(this.inputFormData)) {
+    ContactForm.sendContactFormData(this.inputFormData);
+    this.inputFormData = {
       corporateName: "",
       firstName: "",
       lastName: "",
@@ -62,7 +72,71 @@ function submitData() {
       message: ""
     }
   }
+  }
 }
+}
+
+// const isValidInputFormData = ref({
+//   corporateName: true,
+//   firstName: true,
+//   lastName: true,
+//   emailPhoneNumber: true,
+//   message: true
+// })
+
+// const inputFormData = ref({
+//   corporateName: "",
+//   firstName: "",
+//   lastName: "",
+//   email: "",
+//   phoneNumber: "",
+//   message: ""
+// })
+
+// function isValidInput(inputs) {
+//   let isValid = true;
+//   isValidInputFormData.value.corporateName = true;
+//   isValidInputFormData.value.firstName = true;
+//   isValidInputFormData.value.lastName = true;
+//   isValidInputFormData.value.emailPhoneNumber = true;
+//   isValidInputFormData.value.message = true;
+//   if (inputs.value.corporateName === '' || inputs.value.corporateName.trim().length > 200) {
+//     isValidInputFormData.value.corporateName = false;
+//     isValid = false;
+//   }
+//   if (inputs.value.firstName === '' || inputs.value.firstName.trim().length > 200) {
+//     isValidInputFormData.value.firstName = false;
+//     isValid = false;
+//   }
+//   if (inputs.value.lastName === '' || inputs.value.lastName.trim().length > 200) {
+//     isValidInputFormData.value.lastName = false;
+//     isValid = false;
+//   }
+//   if (inputs.value.email === '' && inputs.value.phoneNumber === '') {
+//     isValidInputFormData.value.emailPhoneNumber = false;
+//     isValid = false;
+//   }
+//   if (inputs.value.message === '' || inputs.value.message.trim().length > 2000) {
+//     isValidInputFormData.value.message = false;
+//     isValid = false;
+//   }
+//   return isValid;
+// }
+
+// function submitData() {
+//   event.preventDefault()
+//   if (isValidInput(inputFormData)) {
+//     ContactForm.sendContactFormData(inputFormData);
+//     inputFormData.value = {
+//       corporateName: "",
+//       firstName: "",
+//       lastName: "",
+//       email: "",
+//       phoneNumber: "",
+//       message: ""
+//     }
+//   }
+// }
 </script>
 
 <template>

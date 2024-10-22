@@ -1,29 +1,57 @@
-<script setup>
-import { onMounted, ref } from 'vue';
+<script>
 import TermsForm from '../services/termsForm.js';
 
-const termsForm = ref("");
+export default {
+  name: 'TermsFormView',
+  props: {
+    isEditable: Boolean
+  },
+  data() {
+    return {
+      termsForm: "",
+      data: {},
+      isInEdition: false
+    };
+  },
+  mounted() {
+    this.fetchData();
+  },
+  methods: {
+    async fetchData() {
+      this.data = await TermsForm.fetchData();
+    },
+    toggleEdition() {
+      this.isInEdition = !this.isInEdition;
+    },
+    async saveChange() {
+      this.data = await TermsForm.updateData(this.data);
+      this.isInEdition = false;
+    }
+  }
+};
 
-const props = defineProps({
-  isEditable: Boolean
-})
+// const termsForm = ref("");
 
-const data = ref({});
-const isInEdition = ref(false);
+// const props = defineProps({
+//   isEditable: Boolean
+// })
 
-onMounted(async () => {
-  data.value = await TermsForm.fetchData();
-})
+// const data = ref({});
+// const isInEdition = ref(false);
 
-function toggleEdition() {
-  //isInEdition.value = true;
-  isInEdition.value = !isInEdition.value;
-}
+// onMounted(async () => {
+//   data.value = await TermsForm.fetchData();
+// })
 
-async function saveChange() {
-  data.value = await TermsForm.updateData(data.value);
-  isInEdition.value = false;
-}
+// function toggleEdition() {
+//   //isInEdition.value = true;
+//   isInEdition.value = !isInEdition.value;
+// }
+
+// async function saveChange() {
+//   data.value = await TermsForm.updateData(data.value);
+//   isInEdition.value = false;
+// }
 
 </script>
 
@@ -31,7 +59,7 @@ async function saveChange() {
 
   <section class="form-term">
 
-    <button v-if="props.isEditable" class="me-5 btn btn-info mt-3" @click="toggleEdition">
+    <button v-if="isEditable" class="me-5 btn btn-info mt-3" @click="toggleEdition">
       <i class="h4 text-white bi bi-pencil-square"></i>
     </button>
 
@@ -44,7 +72,7 @@ async function saveChange() {
         <label for="floatingTextarea2">Comments</label>
       </div>
 
-      <div v-if="props.isEditable" class="form-floating"> <!--<span> {{termsForm}} </span>-->
+      <div v-if="isEditable" class="form-floating"> <!--<span> {{termsForm}} </span>-->
         <textarea v-model="termsForm" class="form-control" placeholder="Leave a comment here" 
         id="floatingTextarea2" style="height: 350px; width: 1000px;"></textarea>
 
@@ -52,7 +80,7 @@ async function saveChange() {
       </div>
 
       <div class="text-end">
-        <div v-if="props.isEditable && isInEdition" @click="saveChange" class="btn btn-primary mb-3">SAVE</div>
+        <div v-if="isEditable && isInEdition" @click="saveChange" class="btn btn-primary mb-3">SAVE</div>
       </div>
 
     </div>
