@@ -64,17 +64,17 @@ export default {
     </button>
 
     <div class="row row-cols-lg-1 mt-4">
-
+      
       <div class="form-floating"> 
-        <div  class="form-control" placeholder="Leave a comment here" 
-        id="floatingTextarea2" style="height: 350px; width: 1000px;">{{termsForm}}</div>
+        <textarea  v-model="termsForm" ass="form-control" placeholder="Leave a comment here" 
+        id="floatingTextarea2" style="min-height: 350px; width: 1000px;"></textarea>
 
         <label for="floatingTextarea2">Comments</label>
       </div>
 
       <div v-if="isEditable" class="form-floating"> <!--<span> {{termsForm}} </span>-->
         <textarea v-model="termsForm" class="form-control" placeholder="Leave a comment here" 
-        id="floatingTextarea2" style="height: 350px; width: 1000px;"></textarea>
+        id="floatingTextarea2" style="min-height: 350px; width: 1000px;"></textarea>
 
         <label for="floatingTextarea2">Comments</label>
       </div>
