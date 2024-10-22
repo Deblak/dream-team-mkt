@@ -35,33 +35,6 @@ async saveChange() {
 }
   }
 };
-// const scrollRefComponent = ref(null);
-// const isInEdition = ref(false);
-
-// const props = defineProps({
-//   isEditable: Boolean
-// });
-
-// const retrieveDatas = ref([]);
-// onMounted( async () => {
-//   retrieveDatas.value = await PricingDetails.fetchData();
-// })
-
-// function splitDetailPlanOffer(params) {
-//   return params.split(',')
-// }
-
-// function toggleEdition() {
-//   isInEdition.value = !isInEdition.value;
-// }
-// async function saveChange() {
-//     console.log('Données avant avant à jour:', retrieveDatas.value);
-//   await PricingDetails.updateData(retrieveDatas.value);
-//   console.log('Données avant mise à jour:', retrieveDatas.value);
-//   retrieveDatas.value = await PricingDetails.fetchData();
-//   isInEdition.value = false;
-// }
-
 </script>
 
 

@@ -4,6 +4,7 @@ import router from './router';
 import { createI18n } from 'vue-i18n';
 import French from './i18n/fr.json';
 import English from './i18n/en.json';
+import { Vue3Mq } from 'vue3-mq';
 
 const app = createApp(App)
 
@@ -20,4 +21,7 @@ const i18 = createI18n({
 
 app.use(router)
 app.use(i18)
+app.use(Vue3Mq, {
+  global : true,
+})
 app.mount('#app')
