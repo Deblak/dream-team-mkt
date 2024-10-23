@@ -108,6 +108,6 @@ async saveChange() {
 .border {
     border : solid black;
     /* margin-top: 10rem; */
-    background-color: yellow; 
+    background-color: yellow;
 }
 </style>

@@ -5,15 +5,15 @@ class ContactForm {
 
   static sendContactFormData(inputs) {
     const data = {
-      corporateName: inputs.value.corporateName.trim(),
-      firstName: inputs.value.firstName.trim(),
-      lastName: inputs.value.lastName.trim(),
-      email: inputs.value.email.trim(),
-      phoneNumber: inputs.value.phoneNumber.trim(),
-      message: inputs.value.message.trim()
+      corporateName: inputs.corporateName.trim(),
+      firstName: inputs.firstName.trim(),
+      lastName: inputs.lastName.trim(),
+      email: inputs.email.trim(),
+      phoneNumber: inputs.phoneNumber.trim(),
+      message: inputs.message.trim()
     }
     axiosClient.post('/mail/send',
-      { data }
+      {data }
       )
   }
 }
