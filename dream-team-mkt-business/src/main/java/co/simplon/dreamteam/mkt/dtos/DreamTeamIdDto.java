@@ -1,6 +1,8 @@
 package co.simplon.dreamteam.mkt.dtos;
 
-public record DreamTeamIdDto(String pictureFr, String pictureEn, String sloganFr, String sloganEn, String panelOneDescFr, String panelOneDescEn,
-		String panelTwoDescFr, String panelTwoDescEn) {
+import jakarta.validation.constraints.NotBlank;
+
+public record DreamTeamIdDto(@NotBlank String pictureFr, @NotBlank String pictureEn, @NotBlank String sloganFr, @NotBlank String sloganEn,
+		@NotBlank String panelOneDescFr, @NotBlank String panelOneDescEn, @NotBlank String panelTwoDescFr, @NotBlank String panelTwoDescEn) {
 
 }

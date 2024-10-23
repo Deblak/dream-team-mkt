@@ -23,9 +23,7 @@ public class GeneralTermsService {
 	public String updateData(String terms) {
 		Terms newTerms = new Terms();
 		newTerms.setTerms(terms);
-
 		repository.saveAndFlush(newTerms);
-
 		return terms;
 	}
 

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import co.simplon.dreamteam.mkt.services.GeneralTermsService;
+import jakarta.validation.constraints.NotBlank;
 
 @RestController
 @RequestMapping("/generalterms")
@@ -27,7 +28,7 @@ public class GeneralTermsController {
 
 	@PatchMapping("/updateData")
 	@ResponseStatus(code = HttpStatus.OK)
-	public String update(@RequestBody String inputs) {
+	public String update(@RequestBody @NotBlank String inputs) {
 		return service.updateData(inputs);
 	}
 }

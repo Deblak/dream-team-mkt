@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import co.simplon.dreamteam.mkt.dtos.DreamTeamIdDto;
 import co.simplon.dreamteam.mkt.services.DreamTeamIdService;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/dreamteam")
@@ -28,7 +29,7 @@ public class DreamTeamIdController {
 
 	@PatchMapping("/updateData")
 	@ResponseStatus(code = HttpStatus.OK)
-	public DreamTeamIdDto update(@RequestBody DreamTeamIdDto inputs) {
+	public DreamTeamIdDto update(@RequestBody @Valid DreamTeamIdDto inputs) {
 		return service.updateData(inputs);
 	}
 

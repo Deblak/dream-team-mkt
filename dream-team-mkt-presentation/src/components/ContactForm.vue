@@ -51,7 +51,7 @@ function isValidInput(inputs) {
 
 function submitData() {
   event.preventDefault()
-  if (isValidInput(inputFormData)) {
+  if (isValidInput(inputFormData)) {  
     ContactForm.sendContactFormData(inputFormData);
     inputFormData.value = {
       corporateName: "",

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import co.simplon.dreamteam.mkt.dtos.OfferDto;
 import co.simplon.dreamteam.mkt.services.OfferService;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/offers")
@@ -30,7 +31,7 @@ public class OfferController {
 
 	@PatchMapping
 	@ResponseStatus(code = HttpStatus.OK)
-	public void update(@RequestBody List<OfferDto> inputs) {
+	public void update(@RequestBody @Valid List<OfferDto> inputs) {
 		service.updateData(inputs);
 	}
 }

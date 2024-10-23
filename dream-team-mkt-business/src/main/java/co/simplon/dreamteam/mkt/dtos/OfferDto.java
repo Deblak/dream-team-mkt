@@ -1,6 +1,9 @@
 package co.simplon.dreamteam.mkt.dtos;
 
-public record OfferDto(Long id, String nameFr, String nameEn, String priceFr, String priceEn, String planFr, String planEn, String callToActionFr,
-		String callToActionEn) {
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
+
+public record OfferDto(@Positive Long id, @NotBlank String nameFr, @NotBlank String nameEn, @NotBlank String priceFr, @NotBlank String priceEn,
+		@NotBlank String planFr, @NotBlank String planEn, @NotBlank String callToActionFr, @NotBlank String callToActionEn) {
 
 }
