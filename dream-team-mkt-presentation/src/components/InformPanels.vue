@@ -1,43 +1,75 @@
-<script setup>
-import { onMounted, ref } from 'vue';
+<script>
 import InformPanels from '../services/informPanels.js'
 
-const props = defineProps({
-  isEditable: Boolean
-})
+export default {
+  name: 'InformPanelsVieuw',
+  props: {
+    isEditable: Boolean
+  },
+  data() {
+    return {
+      language: navigator.language,
+      data: [],
+      isInEdition: false
+    }
+  },
+  mounted() {
+this.fetchData();
+  },
+  methods: {
+    async fetchData() {
 
-const data = ref({});
-const isInEdition = ref(false);
-const language = navigator.language;
+      this.data = await InformPanels.fetchData();
+    },
+    toggleEdition() {
+      //isInEdition.value = true;
+      this.isInEdition = !this.isInEdition;
+    },
 
-onMounted(async () => {
-  data.value = await InformPanels.fetchData();
-})
+    async saveChange() {
+      this.data = await InformPanels.updateData(this.data);
+      this.isInEdition = false;
+    }
+  }
 
-function toggleEdition() {
-  //isInEdition.value = true;
-  isInEdition.value = !isInEdition.value;
 }
 
-async function saveChange() {
-  data.value = await InformPanels.updateData(data.value);
-  isInEdition.value = false;
-}
+// const props = defineProps({
+//   isEditable: Boolean
+// })
+
+// const data = ref({});
+// const isInEdition = ref(false);
+// const language = navigator.language;
+
+// onMounted(async () => {
+//   data.value = await InformPanels.fetchData();
+// })
+
+// function toggleEdition() {
+//   //isInEdition.value = true;
+//   isInEdition.value = !isInEdition.value;
+// }
+
+// async function saveChange() {
+//   data.value = await InformPanels.updateData(data.value);
+//   isInEdition.value = false;
+// }
 </script>
 
 
 <template>
 
   <section class="text-end">
-    <button v-if="props.isEditable" class="me-5 btn btn-info mt-3" @click="toggleEdition">
+    <button v-if="isEditable" class="me-5 btn btn-info mt-3" @click="toggleEdition">
       <i class="h4 text-white bi bi-pencil-square"></i>
     </button>
     <div class="container">
       <div class="row row-cols-lg-2 my-4">
         <div class="mb-3">
           <div v-if="isInEdition">
-            <span v-if="language === 'fr-FR'">{{$t('french')}}</span>
-            <span v-else>{{$t('english')}}</span>
+            <span v-if="language === 'fr-FR'">{{ $t('french') }}</span>
+            <span v-else>{{ $t('english') }}</span>
           </div>
           <div class="card">
             <p v-if="language === 'fr-FR'" class="align-self-center p-4">{{ data.panelOneDescFr }}</p>
@@ -46,8 +78,8 @@ async function saveChange() {
         </div>
         <div class="mb-3">
           <div v-if="isInEdition">
-            <span v-if="language === 'fr-FR'">{{$t('french')}}</span>
-            <span v-else>{{$t('english')}}</span>
+            <span v-if="language === 'fr-FR'">{{ $t('french') }}</span>
+            <span v-else>{{ $t('english') }}</span>
           </div>
           <div class="card">
             <p v-if="language === 'fr-FR'" class="align-self-center p-4">{{ data.panelTwoDescFr }}</p>
@@ -58,24 +90,25 @@ async function saveChange() {
 
       <div v-if="isInEdition" class="row row-cols-lg-2 mt-4">
         <div class="mb-3">
-          <label for="panel-one-en">{{$t('english')}}</label>
+          <label for="panel-one-en">{{ $t('english') }}</label>
           <textarea v-model="data.panelOneDescEn" id="panel-one-en" class="form-control"></textarea>
         </div>
         <div class="mb-3">
-          <label for="panel-two-en">{{$t('english')}}</label>
+          <label for="panel-two-en">{{ $t('english') }}</label>
           <textarea v-model="data.panelTwoDescEn" id="panel-two-en" class="form-control"></textarea>
         </div>
         <div class="mb-3">
-          <label for="panel-one-fr">{{$t('french')}}</label>
+          <label for="panel-one-fr">{{ $t('french') }}</label>
           <textarea v-model="data.panelOneDescFr" id="panel-one-fr" class="form-control"></textarea>
         </div>
         <div class="mb-3">
-          <label for="panel-two-fr">{{$t('french')}}</label>
+          <label for="panel-two-fr">{{ $t('french') }}</label>
           <textarea v-model="data.panelTwoDescFr" id="panel-two-fr" class="form-control"></textarea>
         </div>
       </div>
       <div class="text-end">
-        <div v-if="props.isEditable && isInEdition" @click="saveChange" class="btn btn-primary mb-3">{{$t('save')}}</div>
+        <div v-if="isEditable && isInEdition" @click="saveChange" class="btn btn-primary mb-3">{{ $t('save') }}
+        </div>
       </div>
     </div>
 
