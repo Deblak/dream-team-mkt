@@ -71,5 +71,16 @@ spring.mail.port=SECRET-PORT
 spring.mail.username=SECRET-EMAIL
 spring.mail.password=SECRET-PASSWORD
 spring.mail.properties.mail.smtp.ssl.enable=true
+
+co.simplon.dream-team.cors=http://localhost:5173
+#spring.config.activate.on-profile=local
+
+logging.level.root=WARN
+logging.file.name=./logs/dream-team-mkt.log
+logging.logback.rollingpolicy.file-name-pattern=./logs/dream-team-mkt.%d{yyyy-MM-dd}.%i.log
+logging.logback.rollingpolicy.max-file-size=10MB
+logging.logback.rollingpolicy.total-size-cap=200MB
+logging.logback.rollingpolicy.max-history=7
+logging.pattern.console=
 ```
 please contact us to get SECRETS !
