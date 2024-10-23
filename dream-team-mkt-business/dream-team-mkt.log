@@ -1,0 +1,163 @@
+2024-10-22T02:27:03.197+02:00  WARN 14533 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-22T02:28:01.764+02:00 ERROR 14533 --- [http-nio-8080-exec-1] c.s.d.m.c.errors.ControllerAdvice        : org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character (':' (code 58)): was expecting comma to separate Object entries
+2024-10-22T02:30:54.733+02:00  INFO 15124 --- [main] c.s.d.mkt.DreamTeamBusinessApplication   : Starting DreamTeamBusinessApplication using Java 21.0.2 with PID 15124 (/home/lf/code/LFSchefer/simplon/dream-team/dream-team-mkt/dream-team-mkt-business/target/classes started by lf in /home/lf/code/LFSchefer/simplon/dream-team/dream-team-mkt/dream-team-mkt-business)
+2024-10-22T02:30:54.734+02:00  INFO 15124 --- [main] c.s.d.mkt.DreamTeamBusinessApplication   : The following 1 profile is active: "local"
+2024-10-22T02:30:55.265+02:00  INFO 15124 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-22T02:30:55.310+02:00  INFO 15124 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 3 JPA repository interfaces.
+2024-10-22T02:30:55.675+02:00  INFO 15124 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-22T02:30:55.687+02:00  INFO 15124 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-22T02:30:55.687+02:00  INFO 15124 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-22T02:30:55.721+02:00  INFO 15124 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-22T02:30:55.722+02:00  INFO 15124 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 949 ms
+2024-10-22T02:30:55.823+02:00  INFO 15124 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-22T02:30:56.092+02:00  INFO 15124 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@11f23203
+2024-10-22T02:30:56.093+02:00  INFO 15124 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-22T02:30:56.123+02:00  INFO 15124 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-22T02:30:56.151+02:00  INFO 15124 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-22T02:30:56.170+02:00  INFO 15124 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-22T02:30:56.379+02:00  INFO 15124 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-22T02:30:57.169+02:00  INFO 15124 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-22T02:30:57.171+02:00  INFO 15124 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-22T02:30:57.477+02:00  WARN 15124 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-22T02:30:57.833+02:00  INFO 15124 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-22T02:30:57.840+02:00  INFO 15124 --- [main] c.s.d.mkt.DreamTeamBusinessApplication   : Started DreamTeamBusinessApplication in 3.451 seconds (process running for 3.94)
+2024-10-22T02:31:07.537+02:00  INFO 15124 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-10-22T02:31:07.544+02:00  INFO 15124 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-22T02:31:07.545+02:00  INFO 15124 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-22T02:31:07.551+02:00  INFO 15124 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-22T02:31:08.956+02:00  INFO 15231 --- [main] c.s.d.mkt.DreamTeamBusinessApplication   : Starting DreamTeamBusinessApplication using Java 21.0.2 with PID 15231 (/home/lf/code/LFSchefer/simplon/dream-team/dream-team-mkt/dream-team-mkt-business/target/classes started by lf in /home/lf/code/LFSchefer/simplon/dream-team/dream-team-mkt/dream-team-mkt-business)
+2024-10-22T02:31:08.959+02:00  INFO 15231 --- [main] c.s.d.mkt.DreamTeamBusinessApplication   : The following 1 profile is active: "local"
+2024-10-22T02:31:09.524+02:00  INFO 15231 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-22T02:31:09.571+02:00  INFO 15231 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 3 JPA repository interfaces.
+2024-10-22T02:31:09.952+02:00  INFO 15231 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-22T02:31:09.962+02:00  INFO 15231 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-22T02:31:09.963+02:00  INFO 15231 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-22T02:31:10.000+02:00  INFO 15231 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-22T02:31:10.000+02:00  INFO 15231 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1002 ms
+2024-10-22T02:31:10.105+02:00  INFO 15231 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-22T02:31:10.336+02:00  INFO 15231 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6221b13b
+2024-10-22T02:31:10.338+02:00  INFO 15231 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-22T02:31:10.375+02:00  INFO 15231 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-22T02:31:10.412+02:00  INFO 15231 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-22T02:31:10.437+02:00  INFO 15231 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-22T02:31:10.656+02:00  INFO 15231 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-22T02:31:11.505+02:00  INFO 15231 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-22T02:31:11.508+02:00  INFO 15231 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-22T02:31:11.828+02:00  WARN 15231 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-22T02:31:12.181+02:00  INFO 15231 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-22T02:31:12.190+02:00  INFO 15231 --- [main] c.s.d.mkt.DreamTeamBusinessApplication   : Started DreamTeamBusinessApplication in 3.569 seconds (process running for 4.059)
+2024-10-22T02:31:18.093+02:00  INFO 15231 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-10-22T02:31:18.102+02:00  INFO 15231 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-22T02:31:18.105+02:00  INFO 15231 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-22T02:31:18.112+02:00  INFO 15231 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-22T02:31:19.807+02:00  INFO 15336 --- [main] c.s.d.mkt.DreamTeamBusinessApplication   : Starting DreamTeamBusinessApplication using Java 21.0.2 with PID 15336 (/home/lf/code/LFSchefer/simplon/dream-team/dream-team-mkt/dream-team-mkt-business/target/classes started by lf in /home/lf/code/LFSchefer/simplon/dream-team/dream-team-mkt/dream-team-mkt-business)
+2024-10-22T02:31:19.809+02:00  INFO 15336 --- [main] c.s.d.mkt.DreamTeamBusinessApplication   : The following 1 profile is active: "local"
+2024-10-22T02:31:20.372+02:00  INFO 15336 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-22T02:31:20.422+02:00  INFO 15336 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 3 JPA repository interfaces.
+2024-10-22T02:31:20.823+02:00  INFO 15336 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-22T02:31:20.835+02:00  INFO 15336 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-22T02:31:20.835+02:00  INFO 15336 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-22T02:31:20.880+02:00  INFO 15336 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-22T02:31:20.880+02:00  INFO 15336 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1026 ms
+2024-10-22T02:31:21.017+02:00  INFO 15336 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-22T02:31:21.292+02:00  INFO 15336 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6221b13b
+2024-10-22T02:31:21.294+02:00  INFO 15336 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-22T02:31:21.335+02:00  INFO 15336 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-22T02:31:21.378+02:00  INFO 15336 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-22T02:31:21.407+02:00  INFO 15336 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-22T02:31:21.707+02:00  INFO 15336 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-22T02:31:22.654+02:00  INFO 15336 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-22T02:31:22.657+02:00  INFO 15336 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-22T02:31:22.964+02:00  WARN 15336 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-22T02:31:23.267+02:00  INFO 15336 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-22T02:31:23.274+02:00  INFO 15336 --- [main] c.s.d.mkt.DreamTeamBusinessApplication   : Started DreamTeamBusinessApplication in 3.84 seconds (process running for 4.361)
+2024-10-22T02:33:46.217+02:00  INFO 15336 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-22T02:33:46.217+02:00  INFO 15336 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-22T02:33:46.218+02:00  INFO 15336 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-22T02:33:46.290+02:00 ERROR 15336 --- [http-nio-8080-exec-1] c.s.d.m.c.errors.ControllerAdvice        : org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character (':' (code 58)): was expecting comma to separate Object entries
+2024-10-22T02:33:58.744+02:00  WARN 15336 --- [http-nio-8080-exec-3] c.s.d.m.c.errors.ControllerAdvice        : {fieldErrors={panelOneDescEn=[NotBlank]}, globalErrors=[]}
+2024-10-22T02:33:58.745+02:00 ERROR 15336 --- [http-nio-8080-exec-3] c.s.d.m.c.errors.ControllerAdvice        : org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public co.simplon.dreamteam.mkt.dtos.DreamTeamIdDto co.simplon.dreamteam.mkt.controllers.DreamTeamIdController.update(co.simplon.dreamteam.mkt.dtos.DreamTeamIdDto): [Field error in object 'dreamTeamIdDto' on field 'panelOneDescEn': rejected value []; codes [NotBlank.dreamTeamIdDto.panelOneDescEn,NotBlank.panelOneDescEn,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [dreamTeamIdDto.panelOneDescEn,panelOneDescEn]; arguments []; default message [panelOneDescEn]]; default message [must not be blank]] 
+2024-10-22T03:05:47.832+02:00  INFO 15336 --- [RMI TCP Connection(39)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-10-22T03:05:47.842+02:00  INFO 15336 --- [RMI TCP Connection(39)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-22T03:05:47.845+02:00  INFO 15336 --- [RMI TCP Connection(39)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-22T03:05:47.850+02:00  INFO 15336 --- [RMI TCP Connection(39)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-22T03:09:17.488+02:00  WARN 20030 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-22T03:18:13.408+02:00  WARN 21130 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-22T03:22:36.110+02:00  INFO 21683 --- [main] c.s.d.mkt.DreamTeamBusinessApplication   : Starting DreamTeamBusinessApplication using Java 21.0.2 with PID 21683 (/home/lf/code/LFSchefer/simplon/dream-team/dream-team-mkt/dream-team-mkt-business/target/classes started by lf in /home/lf/code/LFSchefer/simplon/dream-team/dream-team-mkt/dream-team-mkt-business)
+2024-10-22T03:22:36.113+02:00  INFO 21683 --- [main] c.s.d.mkt.DreamTeamBusinessApplication   : The following 1 profile is active: "local"
+2024-10-22T03:22:36.612+02:00  INFO 21683 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-22T03:22:36.654+02:00  INFO 21683 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 3 JPA repository interfaces.
+2024-10-22T03:22:37.028+02:00  INFO 21683 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-22T03:22:37.039+02:00  INFO 21683 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-22T03:22:37.039+02:00  INFO 21683 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-22T03:22:37.075+02:00  INFO 21683 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-22T03:22:37.076+02:00  INFO 21683 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 929 ms
+2024-10-22T03:22:37.181+02:00  INFO 21683 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-22T03:22:37.413+02:00  INFO 21683 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7a388990
+2024-10-22T03:22:37.414+02:00  INFO 21683 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-22T03:22:37.448+02:00  INFO 21683 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-22T03:22:37.482+02:00  INFO 21683 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-22T03:22:37.502+02:00  INFO 21683 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-22T03:22:37.707+02:00  INFO 21683 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-22T03:22:38.369+02:00  INFO 21683 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-22T03:22:38.372+02:00  INFO 21683 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-22T03:22:38.677+02:00  WARN 21683 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-22T03:22:39.037+02:00  INFO 21683 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-22T03:22:39.045+02:00  INFO 21683 --- [main] c.s.d.mkt.DreamTeamBusinessApplication   : Started DreamTeamBusinessApplication in 3.221 seconds (process running for 3.643)
+2024-10-22T03:26:55.960+02:00  INFO 21683 --- [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-10-22T03:26:55.967+02:00  INFO 21683 --- [RMI TCP Connection(9)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-22T03:26:55.969+02:00  INFO 21683 --- [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-22T03:26:55.976+02:00  INFO 21683 --- [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-22T03:26:57.402+02:00  INFO 22352 --- [main] c.s.d.mkt.DreamTeamBusinessApplication   : Starting DreamTeamBusinessApplication using Java 21.0.2 with PID 22352 (/home/lf/code/LFSchefer/simplon/dream-team/dream-team-mkt/dream-team-mkt-business/target/classes started by lf in /home/lf/code/LFSchefer/simplon/dream-team/dream-team-mkt/dream-team-mkt-business)
+2024-10-22T03:26:57.403+02:00  INFO 22352 --- [main] c.s.d.mkt.DreamTeamBusinessApplication   : The following 1 profile is active: "local"
+2024-10-22T03:26:57.961+02:00  INFO 22352 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-22T03:26:58.008+02:00  INFO 22352 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 3 JPA repository interfaces.
+2024-10-22T03:26:58.373+02:00  INFO 22352 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-22T03:26:58.384+02:00  INFO 22352 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-22T03:26:58.384+02:00  INFO 22352 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-22T03:26:58.423+02:00  INFO 22352 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-22T03:26:58.423+02:00  INFO 22352 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 975 ms
+2024-10-22T03:26:58.523+02:00  INFO 22352 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-22T03:26:58.762+02:00  INFO 22352 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@21390938
+2024-10-22T03:26:58.765+02:00  INFO 22352 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-22T03:26:58.796+02:00  INFO 22352 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-22T03:26:58.834+02:00  INFO 22352 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-22T03:26:58.859+02:00  INFO 22352 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-22T03:26:59.082+02:00  INFO 22352 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-22T03:26:59.902+02:00  INFO 22352 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-22T03:26:59.905+02:00  INFO 22352 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-22T03:27:00.196+02:00  WARN 22352 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-22T03:27:00.489+02:00  INFO 22352 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-22T03:27:00.496+02:00  INFO 22352 --- [main] c.s.d.mkt.DreamTeamBusinessApplication   : Started DreamTeamBusinessApplication in 3.442 seconds (process running for 3.931)
+2024-10-22T03:27:13.144+02:00  INFO 22352 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-10-22T03:27:13.151+02:00  INFO 22352 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-22T03:27:13.153+02:00  INFO 22352 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-22T03:27:13.162+02:00  INFO 22352 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-22T03:31:01.300+02:00  INFO 22951 --- [main] c.s.d.mkt.DreamTeamBusinessApplication   : Starting DreamTeamBusinessApplication using Java 21.0.2 with PID 22951 (/home/lf/code/LFSchefer/simplon/dream-team/dream-team-mkt/dream-team-mkt-business/target/classes started by lf in /home/lf/code/LFSchefer/simplon/dream-team/dream-team-mkt/dream-team-mkt-business)
+2024-10-22T03:31:01.301+02:00  INFO 22951 --- [main] c.s.d.mkt.DreamTeamBusinessApplication   : The following 1 profile is active: "local"
+2024-10-22T03:31:01.898+02:00  INFO 22951 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-22T03:31:01.951+02:00  INFO 22951 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 3 JPA repository interfaces.
+2024-10-22T03:31:02.390+02:00  INFO 22951 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-22T03:31:02.405+02:00  INFO 22951 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-22T03:31:02.405+02:00  INFO 22951 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-22T03:31:02.443+02:00  INFO 22951 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-22T03:31:02.445+02:00  INFO 22951 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1106 ms
+2024-10-22T03:31:02.572+02:00  INFO 22951 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-22T03:31:02.831+02:00  INFO 22951 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@13213f26
+2024-10-22T03:31:02.832+02:00  INFO 22951 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-22T03:31:02.868+02:00  INFO 22951 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-22T03:31:02.900+02:00  INFO 22951 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-22T03:31:02.922+02:00  INFO 22951 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-22T03:31:03.138+02:00  INFO 22951 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-22T03:31:03.909+02:00  INFO 22951 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-22T03:31:03.913+02:00  INFO 22951 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-22T03:31:04.220+02:00  WARN 22951 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-22T03:31:04.616+02:00  INFO 22951 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-22T03:31:04.624+02:00  INFO 22951 --- [main] c.s.d.mkt.DreamTeamBusinessApplication   : Started DreamTeamBusinessApplication in 3.616 seconds (process running for 4.034)
+2024-10-22T03:55:38.347+02:00  INFO 22951 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-22T03:55:38.348+02:00  INFO 22951 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-22T03:55:38.349+02:00  INFO 22951 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-22T04:09:55.152+02:00  INFO 22951 --- [RMI TCP Connection(43)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-10-22T04:09:55.162+02:00  INFO 22951 --- [RMI TCP Connection(43)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-22T04:09:55.165+02:00  INFO 22951 --- [RMI TCP Connection(43)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-22T04:09:55.175+02:00  INFO 22951 --- [RMI TCP Connection(43)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
