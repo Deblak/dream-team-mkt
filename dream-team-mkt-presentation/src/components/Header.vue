@@ -1,5 +1,3 @@
-<script setupt></script>
-
 <template>
   <header class="container">
     <nav class="fixed-top navbar navbar-expand-lg bg-body-tertiary">

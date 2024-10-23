@@ -1,79 +1,99 @@
 <script>
-import ContactForm from "../services/contactForm.js"
+import ContactForm from "../services/contactForm.js";
+// import { useVuelidate } from '@vuelidate/core';
+// import { required, email } from '@vuelidate/validators'
 
-export default{
+export default {
+
+  // setup() {
+  //   return { v$: useVuelidate() }
+  // },
+
   name: 'ContanctForm',
   props: {
     isEditable: Boolean
   },
-  data(){
+  data() {
     return {
-      isValidInputFormData: { 
-  corporateName: true,
-  firstName: true,
-  lastName: true,
-  emailPhoneNumber: true,
-  message: true
+      isValidInputFormData: {
+        corporateName: true,
+        firstName: true,
+        lastName: true,
+        emailPhoneNumber: true,
+        message: true
       },
 
       inputFormData: {
-  corporateName: "",
-  firstName: "",
-  lastName: "",
-  email: "",
-  phoneNumber: "",
-  message: ""
+        corporateName: "",
+        firstName: "",
+        lastName: "",
+        email: "",
+        phoneNumber: "",
+        message: ""
+      }
     }
-  }
-},
+  },
+  // validations () {
+  //   return {
+  //     corporateName: { required },
+  //     firstName: { required }, // Matches this.firstName
+  //     lastName: { required }, // Matches this.lastName
+  //     email: { required, email }, // Matches this.contact.email
+  //     phoneNumber: { required },
+  //     message: { required }
+  //     }
+  //   },
 
 
   methods: {
     isValidInput(inputs) {
-  let isValid = true;
-  this.isValidInputFormData.corporateName = true;
-  this.isValidInputFormData.firstName = true;
-  this.isValidInputFormData.lastName = true;
-  this.isValidInputFormData.emailPhoneNumber = true;
-  this.isValidInputFormData.message = true;
-  if (inputs.value.corporateName === '' || inputs.value.corporateName.trim().length > 200) {
-    this.isValidInputFormData.corporateName = false;
-    isValid = false;
-  }
-  if (inputs.value.firstName === '' || inputs.value.firstName.trim().length > 200) {
-    this.isValidInputFormData.firstName = false;
-    isValid = false;
-  }
-  if (inputs.value.lastName === '' || inputs.value.lastName.trim().length > 200) {
-    this.isValidInputFormData.lastName = false;
-    isValid = false;
-  }
-  if (inputs.value.email === '' && inputs.value.phoneNumber === '') {
-    this.isValidInputFormData.emailPhoneNumber = false;
-    isValid = false;
-  }
-  if (inputs.value.message === '' || inputs.value.message.trim().length > 2000) {
-    this.isValidInputFormData.message = false;
-    isValid = false;
-  }
-  return isValid;
+      
+      let isValid = true;
+      this.isValidInputFormData.corporateName = true;
+      this.isValidInputFormData.firstName = true;
+      this.isValidInputFormData.lastName = true;
+      this.isValidInputFormData.emailPhoneNumber = true;
+      this.isValidInputFormData.message = true;
+      if (inputs.value.corporateName === '' || inputs.value.corporateName.trim().length > 200) {
+        this.isValidInputFormData.corporateName = false;
+        isValid = false;
+      }
+      if (inputs.value.firstName === '' || inputs.value.firstName.trim().length > 200) {
+        this.isValidInputFormData.firstName = false;
+        isValid = false;
+      }
+      if (inputs.value.lastName === '' || inputs.value.lastName.trim().length > 200) {
+        this.isValidInputFormData.lastName = false;
+        isValid = false;
+      }
+      if (inputs.value.email === '' && inputs.value.phoneNumber === '') {
+        this.isValidInputFormData.emailPhoneNumber = false;
+        isValid = false;
+      }
+      if (inputs.value.message === '' || inputs.value.message.trim().length > 2000) {
+        this.isValidInputFormData.message = false;
+        isValid = false;
+      }
+      return isValid;
     },
 
     submitData() {
-  event.preventDefault()
-  if (this.isValidInput(this.inputFormData)) {
-    ContactForm.sendContactFormData(this.inputFormData);
-    this.inputFormData = {
-      corporateName: "",
-      firstName: "",
-      lastName: "",
-      email: "",
-      phoneNumber: "",
-      message: ""
+      console.log(this.inputFormData);
+      event.preventDefault()
+      if (this.inputFormData) {
+        console.log(this.inputFormData);
+        ContactForm.sendContactFormData(this.inputFormData);
+        this.inputFormData = {
+          corporateName: "",
+          firstName: "",
+          lastName: "",
+          email: "",
+          phoneNumber: "",
+          message: ""
+        }
+      }
     }
   }
-  }
-}
 }
 
 // const isValidInputFormData = ref({
@@ -141,19 +161,19 @@ export default{
 
 <template>
   <div class="container  col-12">
-    <h1 class="text-center m-3">{{ $t('contactForm')}}</h1>
+    <h1 class="text-center m-3">{{ $t('contactForm') }}</h1>
     <form novalidate class="d-flex flex-column mx-3 bg-light rounded-2">
       <div class="contact-form-container">
         <div class="m-3 row">
           <div class="">
             <label for="corporateName" class="form-label fs-5">
-              {{ $t('corporateName')}}<span class="text-danger"><span class="text-danger">*</span></span>
+              {{ $t('corporateName') }}<span class="text-danger"><span class="text-danger">*</span></span>
             </label>
             <input v-model="inputFormData.corporateName" type="text" class="form-control"
               v-bind:class="{ borderIsRed: !isValidInputFormData.corporateName }" id="corporateName"
               v-bind:placeholder="$t('200MaxChar')" required>
             <span v-if="!isValidInputFormData.corporateName" class="feedback fst-italic text-danger">
-              {{ $t('corporateNameValidation')}}
+              {{ $t('corporateNameValidation') }}
             </span>
           </div>
         </div>
@@ -161,52 +181,53 @@ export default{
           <div class="">
             <div class="field mx-3">
               <label for="firstName" class="form-label fs-5">
-                {{ $t('firstName')}}<span class="text-danger">*</span>
+                {{ $t('firstName') }}<span class="text-danger">*</span>
               </label>
               <input v-model="inputFormData.firstName" type="text" class="form-control"
                 v-bind:class="{ borderIsRed: !isValidInputFormData.firstName }" id="firstName"
                 v-bind:placeholder="$t('200MaxChar')" required>
               <span v-if="!isValidInputFormData.firstName" class="feedback fst-italic text-danger">
-                {{ $t('firstNameValidation')}}
+                {{ $t('firstNameValidation') }}
               </span>
             </div>
           </div>
           <div class="">
             <div class="field mx-3">
-              <label for="lastName" class="form-label fs-5">{{ $t('lastName')}}<span class="text-danger">*</span></label>
+              <label for="lastName" class="form-label fs-5">{{ $t('lastName') }}<span
+                  class="text-danger">*</span></label>
               <input v-model="inputFormData.lastName" type="text" class="form-control"
                 v-bind:class="{ borderIsRed: !isValidInputFormData.lastName }" id="lastName"
                 v-bind:placeholder="$t('200MaxChar')" required>
               <span v-if="!isValidInputFormData.lastName" class="feedback fst-italic text-danger">
-                {{ $t('lastNameValidation')}}
+                {{ $t('lastNameValidation') }}
               </span>
             </div>
           </div>
         </div>
         <div class="row row-cols-lg-2 m-3">
-          <div >
+          <div>
             <div class="field mx-3 ">
               <label for="email" class="form-label fs-5">
-                {{ $t('email')}}<span class="text-danger">*</span>
+                {{ $t('email') }}<span class="text-danger">*</span>
               </label>
               <input v-model="inputFormData.email" type="email" class="form-control"
                 v-bind:class="{ borderIsRed: !isValidInputFormData.emailPhoneNumber }" id="email"
                 v-bind:placeholder="$t('emailAndPhoneValidation')">
               <span v-if="!isValidInputFormData.emailPhoneNumber" class="feedback fst-italic text-danger">
-                {{ $t('emailAndPhoneValidation')}}
+                {{ $t('emailAndPhoneValidation') }}
               </span>
             </div>
           </div>
-          <div >
+          <div>
             <div class="field mx-3">
               <label for="phoneNumber" class="form-label fs-5">
-                {{ $t('phone')}}<span class="text-danger">*</span>
+                {{ $t('phone') }}<span class="text-danger">*</span>
               </label>
               <input v-model="inputFormData.phoneNumber" type="tel" class="form-control"
                 v-bind:class="{ borderIsRed: !isValidInputFormData.emailPhoneNumber }" id="phoneNumber"
                 v-bind:placeholder="$t('emailAndPhoneValidation')">
               <span v-if="!isValidInputFormData.emailPhoneNumber" class="feedback fst-italic text-danger">
-                {{ $t('emailAndPhoneValidation')}}
+                {{ $t('emailAndPhoneValidation') }}
               </span>
             </div>
           </div>
@@ -214,12 +235,13 @@ export default{
         <div class="m-3 row">
           <div class="">
             <label for="message" class="form-label fs-5">
-              {{ $t('message')}}<span class="text-danger">*</span>
+              {{ $t('message') }}<span class="text-danger">*</span>
             </label>
             <textarea v-model="inputFormData.message" class="form-control" id="message"
-              v-bind:class="{ borderIsRed: !isValidInputFormData.message }" rows="3" required v-bind:placeholder="$t('200MaxChar')"></textarea>
+              v-bind:class="{ borderIsRed: !isValidInputFormData.message }" rows="3" required
+              v-bind:placeholder="$t('200MaxChar')"></textarea>
             <span v-if="!isValidInputFormData.message" class="feedback fst-italic text-danger">
-              {{ $t('messageValidation')}}
+              {{ $t('messageValidation') }}
             </span>
           </div>
         </div>
