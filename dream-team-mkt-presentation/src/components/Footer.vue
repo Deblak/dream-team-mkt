@@ -9,7 +9,7 @@
       </li>
     </ul>
     <small class="mt-2">
-      <router-link to="/edit-terms" class="text-bg-primary nav-link">Legal informations</router-link>
+      <router-link to="/terms" class="text-bg-primary nav-link">Legal informations</router-link>
     </small>
   </footer>
 </template>

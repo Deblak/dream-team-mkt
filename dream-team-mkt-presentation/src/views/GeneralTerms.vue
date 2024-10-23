@@ -9,6 +9,10 @@ import TermsForm from '../components/TermsForm.vue';
       <Header/>
       <h1>Genral terms and conditions</h1>
       <TermsForm :isEditable="false"/>
+    </div>
+    <div class="container p-5">
       <LinkEditGeneralTerms/>
+    </div>
+    
     </main>
 </template>
