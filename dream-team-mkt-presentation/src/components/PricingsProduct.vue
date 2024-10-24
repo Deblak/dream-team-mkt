@@ -17,9 +17,7 @@ export default {
     this.datas = await PricingsProduct.fetchData();
   },
   methods: {
-    async fetchData() {
-      this.datas = await PricingsProduct.fetchData();
-    },
+
     toggleEdition() {
       this.isInEdition = !this.isInEdition;
     },
